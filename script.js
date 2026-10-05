@@ -13,7 +13,7 @@ const dict = {
     p1:"Designed with AI to automatically check that daily report data is imported correctly and flag anomalies right away, replacing manual line-by-line checks.",
     p2:"Overseeing the status, maintenance and lifecycle of computers and peripherals at every site.",
     p3:"Continuously monitoring computers for infections and responding early to reduce security risk.",
-    contact_h:"Let's talk", contact_p:"Happy to chat about IT operations, security and practical AI."
+    disclaimer:"Personal website. Views are my own and this is not an official Mercedes-Benz Taiwan site.", contact_h:"Let's talk", contact_p:"Happy to chat about IT operations, security and practical AI."
   }
 };
 const zh = {};
@@ -38,6 +38,6 @@ document.getElementById("lang").onclick = () => setLang(root.lang === "en" ? "zh
 document.getElementById("theme").onclick = () => setTheme(root.dataset.theme === "dark" ? "light" : "dark");
 document.getElementById("year").textContent = new Date().getFullYear();
 
-setTheme(safe(() => localStorage.getItem("theme")) || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"));
+setTheme(safe(() => localStorage.getItem("theme")) || "dark");
 const saved = safe(() => localStorage.getItem("lang"));
 if (saved === "en") setLang("en");
