@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>你的名字 | 職稱 / Your Name | Title</title>
+  <meta name="description" content="一句話介紹你是誰、做什麼、能幫對方解決什麼問題。">
+  <!-- LinkedIn / social preview：部署後請把 URL 換成你的網址，並放一張 1200x627 的 assets/og-image.png -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="你的名字 | 職稱">
+  <meta property="og:description" content="一句話介紹你是誰、做什麼、能幫對方解決什麼問題。">
+  <meta property="og:url" content="https://ray8806.github.io/Personal-website/">
+  <meta property="og:image" content="https://ray8806.github.io/Personal-website/assets/og-image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="logo" href="#top">YN<span>.</span></a>
+    <nav>
+      <a href="#about" data-i18n="nav_about">關於我</a>
+      <a href="#experience" data-i18n="nav_exp">經歷</a>
+      <a href="#projects" data-i18n="nav_proj">作品</a>
+      <a href="#contact" data-i18n="nav_contact">聯絡</a>
+      <button id="lang" aria-label="Switch language">EN</button>
+      <button id="theme" aria-label="Toggle dark mode">◐</button>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <img class="avatar" src="assets/avatar.svg" alt="個人照片">
+      <p class="eyebrow" data-i18n="hero_hi">你好，我是</p>
+      <h1>你的名字</h1>
+      <p class="role" data-i18n="hero_role">職稱 · 專長領域</p>
+      <p class="lead" data-i18n="hero_lead">我協助【目標對象】達成【成果】。用一到兩句話說明你的價值，例如：5 年產品經驗，擅長把複雜問題變成簡單、可驗證的方案。</p>
+      <div class="cta">
+        <a class="btn primary" href="https://www.linkedin.com/in/your-id" target="_blank" rel="noopener" data-i18n="cta_li">在 LinkedIn 聯絡我</a>
+        <a class="btn" href="assets/resume.pdf" data-i18n="cta_cv">下載履歷</a>
+      </div>
+    </section>
+
+    <section class="stats">
+      <div><b>5+</b><span data-i18n="stat1">年經驗</span></div>
+      <div><b>20+</b><span data-i18n="stat2">完成專案</span></div>
+      <div><b>3</b><span data-i18n="stat3">產業領域</span></div>
+    </section>
+
+    <section id="about">
+      <h2 data-i18n="nav_about">關於我</h2>
+      <p data-i18n="about_p">在這裡寫 3–4 句話：你的背景、你重視的工作方式、你正在尋找的機會。語氣自然、具體，比頭銜清單更有說服力。</p>
+      <ul class="chips">
+        <li>技能 A</li><li>技能 B</li><li>技能 C</li><li>技能 D</li><li>技能 E</li><li>技能 F</li>
+      </ul>
+    </section>
+
+    <section id="experience">
+      <h2 data-i18n="nav_exp">經歷</h2>
+      <div class="timeline">
+        <article>
+          <time>2023 — 現在</time>
+          <h3>職稱 · 公司名稱</h3>
+          <p data-i18n="exp1">用成果描述：做了什麼 → 帶來什麼數字（例：將轉換率提升 30%）。</p>
+        </article>
+        <article>
+          <time>2020 — 2023</time>
+          <h3>職稱 · 公司名稱</h3>
+          <p data-i18n="exp2">用成果描述：做了什麼 → 帶來什麼數字。</p>
+        </article>
+        <article>
+          <time>2016 — 2020</time>
+          <h3>學位 · 學校名稱</h3>
+          <p data-i18n="exp3">主修、重要榮譽或專題。</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="projects">
+      <h2 data-i18n="nav_proj">精選作品</h2>
+      <div class="grid">
+        <a class="card" href="#" target="_blank" rel="noopener">
+          <span class="tag">案例研究</span>
+          <h3>專案名稱 一</h3>
+          <p data-i18n="p1">問題 → 做法 → 結果，兩句話講完。</p>
+          <span class="more">查看 →</span>
+        </a>
+        <a class="card" href="#" target="_blank" rel="noopener">
+          <span class="tag">開源</span>
+          <h3>專案名稱 二</h3>
+          <p data-i18n="p2">問題 → 做法 → 結果，兩句話講完。</p>
+          <span class="more">查看 →</span>
+        </a>
+        <a class="card" href="#" target="_blank" rel="noopener">
+          <span class="tag">文章</span>
+          <h3>專案名稱 三</h3>
+          <p data-i18n="p3">問題 → 做法 → 結果，兩句話講完。</p>
+          <span class="more">查看 →</span>
+        </a>
+      </div>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2 data-i18n="contact_h">一起聊聊吧</h2>
+      <p data-i18n="contact_p">歡迎合作、面試邀約或單純交流。</p>
+      <div class="cta">
+        <a class="btn primary" href="mailto:you@example.com">you@example.com</a>
+        <a class="btn" href="https://www.linkedin.com/in/your-id" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="https://github.com/Ray8806" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>© <span id="year"></span> 你的名字</footer>
+  <script src="script.js"></script>
+</body>
+</html>
