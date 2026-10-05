@@ -43,3 +43,4 @@ h2::after{content:"";display:block;width:36px;height:3px;background:var(--accent
 .contact p{color:var(--muted);margin-bottom:24px}
 footer{text-align:center;color:var(--muted);font-size:.85rem;padding-top:24px;padding-bottom:40px}
 @media(max-width:560px){.nav nav a{display:none}.stats{grid-template-columns:1fr}}
+.bullets{margin:6px 0 0;padding-left:1.1em;color:var(--muted)}.bullets li{margin-bottom:4px}

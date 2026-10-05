@@ -1,16 +1,19 @@
 const dict = {
   en: {
-    nav_about:"About", nav_exp:"Experience", nav_proj:"Projects", nav_contact:"Contact",
-    hero_hi:"Hi, I'm", hero_role:"Job Title · Specialty",
-    hero_lead:"I help [audience] achieve [outcome]. One or two sentences on your value, e.g. 5 years in product, turning complex problems into simple, testable solutions.",
-    cta_li:"Connect on LinkedIn", cta_cv:"Download résumé",
-    stat1:"Years experience", stat2:"Projects shipped", stat3:"Industries",
-    about_p:"Write 3–4 sentences: your background, how you like to work, what you're looking for next. Specific and natural beats a list of titles.",
-    exp1:"Describe results: what you did → the measurable outcome (e.g. lifted conversion by 30%).",
-    exp2:"Describe results: what you did → the measurable outcome.",
-    exp3:"Major, honors or notable thesis.",
-    p1:"Problem → approach → result, in two sentences.", p2:"Problem → approach → result, in two sentences.", p3:"Problem → approach → result, in two sentences.",
-    contact_h:"Let's talk", contact_p:"Open to collaboration, interviews, or just a good conversation."
+    nav_about:"About", nav_exp:"Experience", nav_proj:"Projects & Scope", nav_contact:"Contact",
+    hero_hi:"Hi, I'm", hero_role:"Systems Engineer · IT Dept., Mercedes-Benz Taiwan",
+    hero_lead:"I keep nationwide IT infrastructure stable and secure, and use AI to automate repetitive monitoring so problems are caught before they spread.",
+    cta_li:"Connect on LinkedIn",
+    stat1:"Nationwide IT equipment", stat2:"Daily report-import monitoring", stat3:"AI in real workflows",
+    about_p:"I'm a systems engineer in the IT department at Mercedes-Benz Taiwan (中華賓士). My work spans device operations, endpoint security and procurement. Beyond keeping equipment at every site running smoothly, I apply AI in practice, for example designing a system that automatically checks whether daily report data is imported correctly, cutting manual verification time and oversights.",
+    exp1:"Manage IT equipment across all sites nationwide to keep daily operations running",
+    exp2:"Monitor computers for viruses and malware to protect endpoint security",
+    exp3:"Responsible for procurement and planning of IT equipment",
+    exp4:"Designed, with AI, a monitoring system that automatically detects whether daily report data is imported normally",
+    p1:"Designed with AI to automatically check that daily report data is imported correctly and flag anomalies right away, replacing manual line-by-line checks.",
+    p2:"Overseeing the status, maintenance and lifecycle of computers and peripherals at every site.",
+    p3:"Continuously monitoring computers for infections and responding early to reduce security risk.",
+    contact_h:"Let's talk", contact_p:"Happy to chat about IT operations, security and practical AI."
   }
 };
 const zh = {};
