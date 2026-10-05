@@ -1,6 +1,6 @@
 const dict = {
   en: {
-    nav_about:"About", nav_exp:"Experience", nav_proj:"Projects & Scope", nav_contact:"Contact",
+    nav_about:"About", nav_exp:"Experience", nav_award:"Awards", nav_proj:"Projects & Scope", nav_contact:"Contact",
     hero_hi:"Hi, I'm", hero_role:"Systems Engineer · IT Dept., Mercedes-Benz Taiwan",
     hero_lead:"I keep nationwide IT infrastructure stable and secure, and use AI to automate repetitive monitoring so problems are caught before they spread.",
     cta_li:"Connect on LinkedIn",
@@ -13,7 +13,7 @@ const dict = {
     p1:"Designed with AI to automatically check that daily report data is imported correctly and flag anomalies right away, replacing manual line-by-line checks.",
     p2:"Overseeing the status, maintenance and lifecycle of computers and peripherals at every site.",
     p3:"Continuously monitoring computers for infections and responding early to reduce security risk.",
-    disclaimer:"Personal website. Views are my own and this is not an official Mercedes-Benz Taiwan site.", contact_h:"Let's talk", contact_p:"Happy to chat about IT operations, security and practical AI."
+    award_h:"Awards", award_t:"1st Place, Education Open Data Category", award_p:"With my university capstone team, won 1st place in the Education Open Data category at the 25th InnoServe Awards (2020 International ICT Innovative Services Awards), a national university-level competition.", disclaimer:"Personal website. Views are my own and this is not an official Mercedes-Benz Taiwan site.", contact_h:"Let's talk", contact_p:"Happy to chat about IT operations, security and practical AI."
   }
 };
 const zh = {};
