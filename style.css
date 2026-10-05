@@ -45,6 +45,8 @@ h2::after{content:"";display:block;width:48px;height:1px;background:var(--silver
 .award{margin:0;background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden}
 .award img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;object-position:50% 62%}
 .award figcaption{padding:28px 28px 30px;display:flex;flex-direction:column;gap:8px}
+.award.demo{margin-top:20px}
+.award video{display:block;width:100%;aspect-ratio:16/9;background:#000}
 .award h3{margin:0;font-weight:400;font-size:1.25rem;letter-spacing:.06em}.award p{margin:0;color:var(--muted)}
 .bullets{margin:8px 0 0;padding-left:1.1em;color:var(--muted)}.bullets li{margin-bottom:6px}
 .contact{text-align:center}.contact h2::after{margin-left:auto;margin-right:auto}
