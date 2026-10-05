@@ -4,9 +4,9 @@
 
 ## 修改內容
 1. 搜尋 `your-id`、`you@example.com` 換成你的資料
-2. 換掉 `assets/avatar.svg`（或改成 `avatar.jpg` 並更新 `index.html`），加入 `assets/resume.pdf`
+2. 換掉 `assets/avatar.jpg`
 3. 英文版文字在 `script.js` 的 `dict.en`；中文版直接寫在 `index.html`
-4. 放一張 1200×627 的 `assets/og-image.png`，LinkedIn 分享時會顯示為預覽圖
+4. 預覽圖目前使用 `assets/avatar.jpg`，之後可換成 1200×627 的圖片
 
 ## 部署（GitHub Pages）
 Settings → Pages → Deploy from a branch → 選 main / root。網址：`https://ray8806.github.io/Personal-website/`
