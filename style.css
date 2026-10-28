@@ -35,6 +35,7 @@ h2::after{content:"";display:block;width:48px;height:1px;background:var(--silver
 .timeline{border-left:1px solid var(--line);padding-left:28px}
 .timeline article{position:relative}
 .timeline article::before{content:"";position:absolute;left:-33px;top:10px;width:9px;height:9px;background:var(--accent);border-radius:50%;box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 22%,transparent)}
+.timeline article+article{margin-top:36px}
 .timeline time{font-size:.8rem;color:var(--accent);letter-spacing:.2em}
 .timeline h3{margin:4px 0 8px;font-size:1.15rem;font-weight:400;letter-spacing:.06em}.timeline p{margin:0;color:var(--muted)}
 .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
