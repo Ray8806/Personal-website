@@ -12,7 +12,7 @@
   <meta property="og:url" content="https://ray8806.github.io/Personal-website/">
   <meta property="og:image" content="https://ray8806.github.io/Personal-website/assets/avatar.jpg">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="style.css?v=9">
+  <link rel="stylesheet" href="style.css?v=10">
 </head>
 <body>
   <header class="nav">
@@ -22,6 +22,7 @@
       <a href="#experience" data-i18n="nav_exp">經歷</a>
       <a href="#awards" data-i18n="nav_award">獲獎</a>
       <a href="#projects" data-i18n="nav_proj">作品</a>
+      <a href="#demo" data-i18n="nav_demo">示範</a>
       <a href="#contact" data-i18n="nav_contact">聯絡</a>
       <button id="lang" aria-label="Switch language">EN</button>
       <button id="theme" aria-label="Toggle dark mode">◐</button>
@@ -121,6 +122,40 @@
       </div>
     </section>
 
+    <section id="demo">
+      <h2 data-i18n="demo_h">互動示範：報表匯入監測</h2>
+      <p class="demo-note" data-i18n="demo_note">以下為示意畫面，資料皆為虛構，用來示範「每日報表匯入監測」的概念：比對來源檔案筆數與資料庫匯入筆數，異常時立即標示。你可以自己操作看看。</p>
+      <div class="monitor" id="monitor">
+        <div class="mon-head">
+          <b data-i18n="mon_title">資料稽核彙整報告</b>
+          <span class="mon-date" id="mon-date"></span>
+        </div>
+        <div class="mon-stats">
+          <div><span data-i18n="mon_total">檢查總數</span><b id="mon-total">0</b></div>
+          <div><span data-i18n="mon_bad">異常件數</span><b id="mon-bad">0</b></div>
+          <div><span data-i18n="mon_status">稽核狀態</span><b id="mon-status">—</b></div>
+        </div>
+        <div class="mon-table">
+          <table>
+            <thead><tr>
+              <th data-i18n="mon_c1">核對項目</th>
+              <th data-i18n="mon_c2">來源檔案筆數</th>
+              <th data-i18n="mon_c3">資料庫匯入筆數</th>
+              <th data-i18n="mon_c4">匯入時間</th>
+              <th data-i18n="mon_c5">執行結果</th>
+            </tr></thead>
+            <tbody id="mon-body"></tbody>
+          </table>
+        </div>
+        <div class="mon-actions">
+          <button class="btn primary" id="mon-run" data-i18n="mon_run">重新檢查</button>
+          <button class="btn" id="mon-inject" data-i18n="mon_inject">模擬匯入異常</button>
+          <button class="btn" id="mon-reset" data-i18n="mon_reset">恢復正常</button>
+        </div>
+        <p class="mon-msg" id="mon-msg" role="status"></p>
+      </div>
+    </section>
+
     <section id="contact" class="contact">
       <h2 data-i18n="contact_h">一起聊聊吧</h2>
       <p data-i18n="contact_p">歡迎聊聊 IT 維運、資安與 AI 實務應用。</p>
@@ -132,6 +167,7 @@
   </main>
 
   <footer>© <span id="year"></span> 蔡承勳<small data-i18n="disclaimer">本站為個人網站，內容僅代表個人，非中華賓士官方網站。</small></footer>
-  <script src="script.js?v=9"></script>
+  <script src="script.js?v=10"></script>
+  <script src="demo.js?v=10"></script>
 </body>
 </html>

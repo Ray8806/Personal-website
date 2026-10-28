@@ -1,6 +1,6 @@
 const dict = {
   en: {
-    nav_about:"About", nav_exp:"Experience", nav_award:"Awards", nav_proj:"Projects & Scope", nav_contact:"Contact",
+    nav_about:"About", nav_exp:"Experience", nav_award:"Awards", nav_demo:"Demo", nav_proj:"Projects & Scope", nav_contact:"Contact",
     hero_hi:"Hi, I'm", hero_role:"Systems Engineer · IT Dept., Mercedes-Benz Taiwan",
     hero_lead:"I keep nationwide IT infrastructure stable and secure, and use AI to automate repetitive monitoring so problems are caught before they spread.",
     cta_li:"Connect on LinkedIn",
@@ -13,7 +13,11 @@ const dict = {
     p1:"Designed with AI to automatically check that daily report data is imported correctly and flag anomalies right away, replacing manual line-by-line checks.",
     p2:"Overseeing the status, maintenance and lifecycle of computers and peripherals at every site.",
     p3:"Continuously monitoring computers for infections and responding early to reduce security risk.",
-    award_h:"Awards", award_t:"1st Place, Education Open Data Category", award_p:"With my university capstone team, won 1st place in the Education Open Data category at the 25th InnoServe Awards (2020 International ICT Innovative Services Awards), a national university-level competition. I was responsible for building the image recognition feature using the Google Vision API.", demo_tag:"Project demo", demo_p:"A learning app for children: kids snap a photo of something they are curious about and get answers through AI image recognition. It adds game-style learning levels and uses open data from Taiwan's Ministry of Education and Ministry of Culture to recommend suitable picture books and materials, while parents can follow their child's progress.", gap_time:"2021 — 2025", gap_t:"Preparing for national civil service exams", gap_p:"After graduating, I spent about three years focused on preparing for national exams, then returned to IT and joined the IT department at Mercedes-Benz Taiwan.", exp_time:"Nov 2025 — Present", edu_time:"Graduated 2021", edu_t:"Ming Chuan University · B.A. in Information Management", edu_p:"My capstone team won 1st place in the Education Open Data category at the InnoServe Awards.", disclaimer:"Personal website. Views are my own and this is not an official Mercedes-Benz Taiwan site.", contact_h:"Let's talk", contact_p:"Happy to chat about IT operations, security and practical AI."
+    award_h:"Awards", award_t:"1st Place, Education Open Data Category", award_p:"With my university capstone team, won 1st place in the Education Open Data category at the 25th InnoServe Awards (2020 International ICT Innovative Services Awards), a national university-level competition. I was responsible for building the image recognition feature using the Google Vision API.", demo_tag:"Project demo", demo_p:"A learning app for children: kids snap a photo of something they are curious about and get answers through AI image recognition. It adds game-style learning levels and uses open data from Taiwan's Ministry of Education and Ministry of Culture to recommend suitable picture books and materials, while parents can follow their child's progress.", gap_time:"2021 — 2025", gap_t:"Preparing for national civil service exams", gap_p:"After graduating, I spent about three years focused on preparing for national exams, then returned to IT and joined the IT department at Mercedes-Benz Taiwan.", exp_time:"Nov 2025 — Present", edu_time:"Graduated 2021", edu_t:"Ming Chuan University · B.A. in Information Management", edu_p:"My capstone team won 1st place in the Education Open Data category at the InnoServe Awards.", demo_h:"Interactive demo: report import monitoring", demo_note:"A mock-up with entirely fictional data, illustrating the idea of daily report-import monitoring: compare the record count in the source file with the count imported into the database, and flag any mismatch right away. Try it yourself.",
+    mon_title:"Data Audit Summary", mon_total:"Checks", mon_bad:"Anomalies", mon_status:"Audit status",
+    mon_c1:"Report", mon_c2:"Source file rows", mon_c3:"Imported rows", mon_c4:"Import time", mon_c5:"Result",
+    mon_run:"Re-run check", mon_inject:"Simulate import failure", mon_reset:"Reset to normal",
+    disclaimer:"Personal website. Views are my own and this is not an official Mercedes-Benz Taiwan site.", contact_h:"Let's talk", contact_p:"Happy to chat about IT operations, security and practical AI."
   }
 };
 const zh = {};
@@ -28,6 +32,7 @@ function setLang(l) {
   document.querySelectorAll("[data-i18n]").forEach(el => { el.innerHTML = dict[l][el.dataset.i18n]; });
   document.getElementById("lang").textContent = l === "en" ? "中" : "EN";
   safe(() => localStorage.setItem("lang", l));
+  if (window.onLangChange) window.onLangChange();
 }
 function setTheme(t) {
   root.dataset.theme = t;

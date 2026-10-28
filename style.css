@@ -55,3 +55,27 @@ h2::after{content:"";display:block;width:48px;height:1px;background:var(--silver
 footer{text-align:center;color:var(--muted);font-size:.75rem;letter-spacing:.08em;padding-top:32px;padding-bottom:48px;border-top:1px solid var(--line)}
 footer small{display:block;margin-top:6px;opacity:.7}
 @media(max-width:600px){.nav nav a{display:none}.stats{grid-template-columns:1fr}.hero{padding-top:56px}}
+
+.demo-note{color:var(--muted);margin:0 0 24px;max-width:720px}
+.monitor{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.mon-head{display:flex;justify-content:space-between;align-items:baseline;padding:22px 26px;border-bottom:1px solid var(--line)}
+.mon-head b{font-weight:400;font-size:1.15rem;letter-spacing:.14em}.mon-date{color:var(--muted);font-size:.85rem;letter-spacing:.1em}
+.mon-stats{display:grid;grid-template-columns:repeat(3,1fr);text-align:center;border-bottom:1px solid var(--line)}
+.mon-stats div{padding:22px 8px}.mon-stats div+div{border-left:1px solid var(--line)}
+.mon-stats span{display:block;color:var(--muted);font-size:.8rem;letter-spacing:.1em}
+.mon-stats b{display:block;font-size:2rem;font-weight:300;line-height:1.4}
+.ok{color:#2fb86b}.bad{color:#ff5a5f}.chk{color:var(--accent)}
+.mon-table{overflow-x:auto}
+.mon-table table{width:100%;border-collapse:collapse;font-size:.9rem;min-width:620px}
+.mon-table th{font-weight:400;color:var(--muted);letter-spacing:.08em;font-size:.8rem;text-align:center;padding:14px 10px;border-bottom:1px solid var(--line)}
+.mon-table td{text-align:center;padding:12px 10px;border-bottom:1px solid var(--line);font-variant-numeric:tabular-nums}
+.mon-table td:first-child{text-align:left;padding-left:26px}
+.mon-table td:nth-child(4){color:var(--muted);font-size:.82rem}
+.mon-table td:last-child{font-weight:500;white-space:nowrap}
+.row-bad{background:color-mix(in srgb,#ff5a5f 10%,transparent)}
+.mon-actions{display:flex;gap:12px;flex-wrap:wrap;padding:22px 26px 10px}
+.mon-actions .btn{padding:10px 24px;font-size:.85rem;cursor:pointer;font-family:inherit;color:var(--fg)}
+.mon-actions .btn.primary{color:#0b0c0d}
+.mon-actions .btn:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+.mon-msg{margin:0;padding:6px 26px 22px;min-height:2.2em;font-size:.9rem}
+@media(max-width:600px){.mon-head{flex-direction:column;gap:4px}}
