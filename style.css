@@ -105,3 +105,14 @@ a.card{color:inherit}
 .deid-actions{display:flex;gap:10px}
 .deid-warn{margin:12px 0 0;font-size:.88rem;min-height:1.6em}
 @media(max-width:700px){.deid-grid{grid-template-columns:1fr}.deid{padding:18px 16px}}
+.deid-custom{margin:0 0 18px}
+.deid-addrow{display:flex;gap:10px;margin-top:8px}
+.deid-addrow input{flex:1;min-width:0;padding:10px 16px;background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:999px;font:inherit;font-size:.88rem}
+.deid-addrow input:focus{outline:2px solid color-mix(in srgb,var(--accent) 55%,transparent);outline-offset:1px}
+.deid-custom .deid-warn{margin:6px 0 0;min-height:0;color:#ff5a5f}
+.deid-custom .chips{margin:10px 0 0;gap:8px}
+.deid-custom .chips:empty{display:none}
+.deid-custom .chips li{display:flex;align-items:center;gap:6px;padding:3px 6px 3px 14px;color:var(--fg)}
+.deid-custom .chips button{background:none;border:0;color:var(--muted);cursor:pointer;font:inherit;font-size:1rem;line-height:1;padding:2px 6px;border-radius:50%}
+.deid-custom .chips button:hover{color:#ff5a5f}
+.tk[data-t=D]{--c:#ff8a3d}

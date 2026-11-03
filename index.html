@@ -14,7 +14,7 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="627">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="style.css?v=14">
+  <link rel="stylesheet" href="style.css?v=15">
 </head>
 <body>
   <header class="nav">
@@ -174,6 +174,15 @@
           </div>
           <button type="button" class="btn" id="deid-reset" data-i18n="deid_reset">重設範例</button>
         </div>
+        <div class="deid-custom">
+          <label class="deid-label" for="deid-term" data-i18n="deid_cust">＋ 自訂要去識別化的詞（試試把原文裡的 Aurora 或 星辰科技 加進來；同一對象的不同稱呼用逗號隔開，會共用同一個代號）</label>
+          <div class="deid-addrow">
+            <input type="text" id="deid-term" maxlength="120" autocomplete="off" spellcheck="false">
+            <button type="button" class="btn" id="deid-add" data-i18n="deid_add">加入</button>
+          </div>
+          <p class="deid-warn" id="deid-termmsg" role="status"></p>
+          <ul class="chips" id="deid-chips" aria-label="自訂詞"></ul>
+        </div>
         <div class="deid-grid">
           <div class="deid-pane">
             <label class="deid-label" for="deid-in" data-i18n="deid_in">① 原文（虛構資料，可自行修改）</label>
@@ -218,8 +227,8 @@
   </main>
 
   <footer>© <span id="year"></span> 蔡承勳<small data-i18n="disclaimer">本站為個人網站，內容僅代表個人，非中華賓士官方網站。</small></footer>
-  <script src="script.js?v=14"></script>
-  <script src="demo.js?v=14"></script>
-  <script src="deid.js?v=14"></script>
+  <script src="script.js?v=15"></script>
+  <script src="demo.js?v=15"></script>
+  <script src="deid.js?v=15"></script>
 </body>
 </html>

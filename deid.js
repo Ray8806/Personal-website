@@ -6,8 +6,8 @@
   var en = function () { return document.documentElement.lang === "en"; };
 
   var SAMPLE = {
-    zh: "客戶：王小明（身分證字號 A123456789）\n手機：0912-345-678　市話：02-1234-5678\nEmail：ming.wang@example.com\n車牌：ABC-1234　登入 IP：10.1.2.3\n\n工單備註：王經理表示設備已送修，林小姐會再與小明確認。\n請聯絡 林美玲 mei@example.com 安排取件。",
-    en: "Customer: Ming Wang (National ID A123456789)\nMobile: 0912-345-678   Landline: 02-1234-5678\nEmail: ming.wang@example.com\nPlate: ABC-1234   Login IP: 10.1.2.3\n\nTicket note: Mr. Wang says the device was sent for repair; Ms. Lin will follow up with Ming.\nPlease contact Mei-Ling Lin at mei@example.com to arrange pickup."
+    zh: "客戶：王小明（身分證字號 A123456789）\n手機：0912-345-678　市話：02-1234-5678\nEmail：ming.wang@example.com\n車牌：ABC-1234　登入 IP：10.1.2.3\n\n工單備註：王經理表示設備已送修，林小姐會再與小明確認。\n請聯絡 林美玲 mei@example.com 安排取件。\n\n專案代號：Aurora　客戶公司：星辰科技",
+    en: "Customer: Ming Wang (National ID A123456789)\nMobile: 0912-345-678   Landline: 02-1234-5678\nEmail: ming.wang@example.com\nPlate: ABC-1234   Login IP: 10.1.2.3\n\nTicket note: Mr. Wang says the device was sent for repair; Ms. Lin will follow up with Ming.\nPlease contact Mei-Ling Lin at mei@example.com to arrange pickup.\n\nProject code: Aurora   Client: Starlight Tech"
   };
   // 自訂字典：同一人的不同稱呼對應同一個代號
   var NAMES = [
@@ -17,10 +17,13 @@
   var TYPES = {
     P: { zh: "人名", en: "Name" }, ID: { zh: "身分證", en: "National ID" },
     T: { zh: "電話", en: "Phone" }, E: { zh: "Email", en: "Email" },
-    C: { zh: "車牌", en: "Plate" }, N: { zh: "IP", en: "IP" }
+    C: { zh: "車牌", en: "Plate" }, N: { zh: "IP", en: "IP" },
+    D: { zh: "自訂詞", en: "Custom" }
   };
-  var ORDER = ["P", "ID", "T", "E", "C", "N"];
+  var ORDER = ["P", "ID", "T", "E", "C", "N", "D"];
 
+  // 使用者自訂的詞：每一組是同一對象的多種稱呼（共用同一個代號）；只存在這個頁面的記憶體，不會儲存或上傳
+  var custom = [], MAX_GROUPS = 50;
   var mode = "token", edited = false, mapRows = [];
 
   function esc(s) { return s.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
@@ -49,6 +52,13 @@
         found.push({ s: m.index, e: m.index + m[0].length, t: type, v: m[0], k: keyFn ? keyFn(m[0]) : m[0] });
       }
     }
+    // 自訂詞先加入，同位置、同長度時優先採用
+    custom.forEach(function (group, gi) {
+      group.forEach(function (term) {
+        var ascii = /^[\x20-\x7e]+$/.test(term);
+        add(new RegExp((ascii ? "(?<![A-Za-z0-9])" : "") + esc(term) + (ascii ? "(?![A-Za-z0-9])" : ""), ascii ? "gi" : "g"), "D", null, function () { return "c" + gi; });
+      });
+    });
     add(/[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}/g, "E", null, function (v) { return v.toLowerCase(); });
     add(/(?<![A-Za-z0-9])[A-Z][12]\d{8}(?![A-Za-z0-9])/g, "ID", idValid);
     add(/(?<!\d)09\d{2}[-\s]?\d{3}[-\s]?\d{3}(?!\d)/g, "T", null, function (v) { return v.replace(/\D/g, ""); });
@@ -72,7 +82,7 @@
   function maskVal(t, v) {
     var digits, keepS, keepE, seen = 0;
     switch (t) {
-      case "P": return v.split(" ").map(function (w) { return w.charAt(0) + new Array(w.length).join("*"); }).join(" ");
+      case "P": case "D": return v.split(" ").map(function (w) { return w.charAt(0) + new Array(w.length).join("*"); }).join(" ");
       case "ID": return v.slice(0, 3) + "*****" + v.slice(-2);
       case "T":
         digits = v.replace(/\D/g, "").length;
@@ -224,8 +234,39 @@
 
   function setSample() { $("deid-in").value = SAMPLE[en() ? "en" : "zh"]; }
 
+  // 自訂詞：以逗號（, ， 、）分隔同一對象的多種稱呼
+  function drawChips() {
+    var ul = $("deid-chips");
+    ul.textContent = "";
+    $("deid-term").placeholder = en() ? "e.g. Aurora   or   Starlight Tech, Starlight" : "例如：Aurora　或　星辰科技, 星辰";
+    custom.forEach(function (group, gi) {
+      var li = document.createElement("li"), x = document.createElement("button");
+      li.appendChild(document.createTextNode(group.join(" = ")));
+      x.type = "button"; x.textContent = "×";
+      x.setAttribute("aria-label", (en() ? "Remove " : "移除 ") + group[0]);
+      x.onclick = function () { custom.splice(gi, 1); drawChips(); compute(); };
+      li.appendChild(x); ul.appendChild(li);
+    });
+  }
+
+  function addTerm() {
+    var input = $("deid-term"), msg = $("deid-termmsg");
+    var terms = input.value.split(/[,，、]/).map(function (s) { return s.trim(); }).filter(function (s) { return s.length >= 2 && s.length <= 60; });
+    terms = terms.filter(function (t, i) { return terms.indexOf(t) === i; });
+    msg.textContent = "";
+    if (!terms.length) { msg.textContent = en() ? "Enter at least 2 characters." : "請輸入至少 2 個字。"; return; }
+    if (custom.length >= MAX_GROUPS) { msg.textContent = en() ? "Limit reached (" + MAX_GROUPS + " groups)." : "已達上限（" + MAX_GROUPS + " 組）。"; return; }
+    custom.push(terms);
+    input.value = "";
+    drawChips(); compute();
+    input.focus();
+  }
+
   function init() {
     setSample();
+    $("deid-add").onclick = addTerm;
+    $("deid-term").addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); addTerm(); } });
+    drawChips();
     $("deid-in").addEventListener("input", function () { edited = true; compute(); });
     $("deid-ai").addEventListener("input", doRestore);
     $("deid-m-token").onclick = function () { mode = "token"; compute(); };
@@ -236,7 +277,7 @@
     window.onLangChange = function () {
       if (prev) prev();
       if (!edited) setSample();
-      compute();
+      drawChips(); compute();
     };
     compute();
   }
