@@ -75,7 +75,7 @@ footer small{display:block;margin-top:6px;opacity:.7}
 .row-bad{background:color-mix(in srgb,#ff5a5f 10%,transparent)}
 .mon-actions{display:flex;gap:12px;flex-wrap:wrap;padding:22px 26px 10px}
 .mon-actions .btn{padding:10px 24px;font-size:.85rem;cursor:pointer;font-family:inherit;color:var(--fg)}
-.mon-actions .btn.primary{color:#0b0c0d}
+.mon-actions .btn.on{border-color:var(--accent);color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,transparent)}
 .mon-actions .btn:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
 .mon-msg{margin:0;padding:6px 26px 22px;min-height:2.2em;font-size:.9rem}
 @media(max-width:600px){.mon-head{flex-direction:column;gap:4px}}

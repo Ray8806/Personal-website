@@ -108,9 +108,16 @@
   function init() {
     if (!$("monitor")) return;
     reset();
-    $("mon-run").onclick = run;
-    $("mon-inject").onclick = inject;
-    $("mon-reset").onclick = function () { if (!busy) { reset(); run(); } };
+    // 點選哪個按鈕，就讓哪個按鈕顯示為「選取中」
+    function setActive(id) {
+      ["mon-run", "mon-inject", "mon-reset"].forEach(function (b) {
+        $(b).classList.toggle("on", b === id);
+        $(b).setAttribute("aria-pressed", b === id);
+      });
+    }
+    $("mon-run").onclick = function () { setActive("mon-run"); run(); };
+    $("mon-inject").onclick = function () { setActive("mon-inject"); inject(); };
+    $("mon-reset").onclick = function () { if (!busy) { setActive("mon-reset"); reset(); run(); } };
     window.onLangChange = render;
     // 捲動到示範區時自動跑一次
     var started = false;
