@@ -21,7 +21,7 @@ const dict = {
     deid_h:"Interactive demo: reversible de-identification", deid_note:"A simplified demo of a personal project I'm planning, a reversible de-identification tool: replace personal data with tokens, then restore them. Everything below runs in your browser and nothing is uploaded; all sample data is fictional. The real tool is designed to run offline on the local machine and keep the restore data in an encrypted mapping file.",
     deid_m_token:"Token mode (reversible)", deid_m_mask:"Mask mode", deid_reset:"Reset sample",
     deid_cust:"+ Add your own terms to de-identify (try Aurora or Starlight Tech from the text; separate different names for the same thing with commas and they share one token)", deid_add:"Add",
-    deid_in:"① Original text (fictional, feel free to edit)", deid_out:"② De-identified result",
+    deid_in:"① Original text (fictional, feel free to edit; highlight text with your mouse to de-identify it)", deid_sel:"+ De-identify the highlighted text", deid_out:"② De-identified result",
     deid_map:"View mapping table (demo only; the real tool stores it encrypted)",
     deid_ai:"③ Text returned by an AI (editable, try changing a token)", deid_sim:"Simulate AI altering tokens", deid_rest:"④ Restored text (green = restored)",
     deid_masknote:"Mask mode only keeps part of the format and does not store the original values, so it cannot be restored. Use token mode when you need to restore.",

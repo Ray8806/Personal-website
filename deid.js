@@ -249,13 +249,42 @@
     });
   }
 
+  function say(text, good) {
+    var msg = $("deid-termmsg");
+    msg.textContent = text;
+    msg.className = "deid-warn" + (good ? " ok" : "");
+  }
+
+  // 反白選取：讀取原文框目前選取的文字（失焦後選取範圍仍保留）
+  function selected() {
+    var ta = $("deid-in"), raw = ta.value.slice(ta.selectionStart, ta.selectionEnd);
+    return { raw: raw, term: raw.trim() };
+  }
+  function syncSel() {
+    if (document.activeElement !== $("deid-in")) return;
+    $("deid-sel").disabled = selected().term.length < 2;
+  }
+  function addSelection() {
+    var s = selected(), ta = $("deid-in");
+    if (/[\r\n]/.test(s.term)) { say(en() ? "Please select text within a single line." : "請選取同一行內的文字。"); return; }
+    if (s.term.length < 2 || s.term.length > 60) { say(en() ? "Select 2 to 60 characters." : "請選取 2 到 60 個字。"); return; }
+    var dup = custom.some(function (g) { return g.some(function (t) { return t.toLowerCase() === s.term.toLowerCase(); }); });
+    if (dup) { say(en() ? "“" + s.term + "” is already in the list." : "「" + s.term + "」已經在自訂詞裡了。"); return; }
+    if (custom.length >= MAX_GROUPS) { say(en() ? "Limit reached (" + MAX_GROUPS + " groups)." : "已達上限（" + MAX_GROUPS + " 組）。"); return; }
+    custom.push([s.term]);
+    ta.setSelectionRange(ta.selectionEnd, ta.selectionEnd);
+    $("deid-sel").disabled = true;
+    drawChips(); compute();
+    say(en() ? "Added “" + s.term + "”; every identical occurrence is replaced." : "已加入「" + s.term + "」，原文中所有相同的文字都會一併處理。", true);
+  }
+
   function addTerm() {
-    var input = $("deid-term"), msg = $("deid-termmsg");
+    var input = $("deid-term");
     var terms = input.value.split(/[,，、]/).map(function (s) { return s.trim(); }).filter(function (s) { return s.length >= 2 && s.length <= 60; });
     terms = terms.filter(function (t, i) { return terms.indexOf(t) === i; });
-    msg.textContent = "";
-    if (!terms.length) { msg.textContent = en() ? "Enter at least 2 characters." : "請輸入至少 2 個字。"; return; }
-    if (custom.length >= MAX_GROUPS) { msg.textContent = en() ? "Limit reached (" + MAX_GROUPS + " groups)." : "已達上限（" + MAX_GROUPS + " 組）。"; return; }
+    say("");
+    if (!terms.length) { say(en() ? "Enter at least 2 characters." : "請輸入至少 2 個字。"); return; }
+    if (custom.length >= MAX_GROUPS) { say(en() ? "Limit reached (" + MAX_GROUPS + " groups)." : "已達上限（" + MAX_GROUPS + " 組）。"); return; }
     custom.push(terms);
     input.value = "";
     drawChips(); compute();
@@ -265,6 +294,9 @@
   function init() {
     setSample();
     $("deid-add").onclick = addTerm;
+    $("deid-sel").onclick = addSelection;
+    ["select", "mouseup", "keyup", "touchend", "input", "focus"].forEach(function (ev) { $("deid-in").addEventListener(ev, syncSel); });
+    document.addEventListener("selectionchange", syncSel);
     $("deid-term").addEventListener("keydown", function (e) { if (e.key === "Enter") { e.preventDefault(); addTerm(); } });
     drawChips();
     $("deid-in").addEventListener("input", function () { edited = true; compute(); });

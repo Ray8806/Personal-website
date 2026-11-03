@@ -14,7 +14,7 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="627">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="style.css?v=15">
+  <link rel="stylesheet" href="style.css?v=16">
 </head>
 <body>
   <header class="nav">
@@ -185,8 +185,9 @@
         </div>
         <div class="deid-grid">
           <div class="deid-pane">
-            <label class="deid-label" for="deid-in" data-i18n="deid_in">① 原文（虛構資料，可自行修改）</label>
+            <label class="deid-label" for="deid-in" data-i18n="deid_in">① 原文（虛構資料，可自行修改；用滑鼠反白選取文字，就能加入去識別化）</label>
             <textarea id="deid-in" rows="10" spellcheck="false"></textarea>
+            <div class="deid-actions"><button type="button" class="btn" id="deid-sel" disabled data-i18n="deid_sel">＋ 將反白選取的文字去識別化</button></div>
           </div>
           <div class="deid-pane">
             <span class="deid-label" data-i18n="deid_out">② 去識別化結果</span>
@@ -227,8 +228,8 @@
   </main>
 
   <footer>© <span id="year"></span> 蔡承勳<small data-i18n="disclaimer">本站為個人網站，內容僅代表個人，非中華賓士官方網站。</small></footer>
-  <script src="script.js?v=15"></script>
-  <script src="demo.js?v=15"></script>
-  <script src="deid.js?v=15"></script>
+  <script src="script.js?v=16"></script>
+  <script src="demo.js?v=16"></script>
+  <script src="deid.js?v=16"></script>
 </body>
 </html>
