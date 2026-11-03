@@ -79,3 +79,29 @@ footer small{display:block;margin-top:6px;opacity:.7}
 .mon-actions .btn:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
 .mon-msg{margin:0;padding:6px 26px 22px;min-height:2.2em;font-size:.9rem}
 @media(max-width:600px){.mon-head{flex-direction:column;gap:4px}}
+
+/* 去識別化互動示範 */
+a.card{color:inherit}
+.deid{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px 26px 20px}
+.deid-bar{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.deid-modes{display:flex;gap:10px;flex-wrap:wrap}
+.deid .btn{padding:9px 22px;font-size:.85rem;cursor:pointer;font-family:inherit;color:var(--fg)}
+.deid .btn.on{border-color:var(--accent);color:var(--accent);background:color-mix(in srgb,var(--accent) 12%,transparent)}
+.deid-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:6px}
+.deid-pane{display:flex;flex-direction:column;gap:8px;min-width:0}
+.deid-label{font-size:.78rem;letter-spacing:.1em;color:var(--muted)}
+.deid textarea,.deid-box{width:100%;min-height:15em;margin:0;padding:14px 16px;background:var(--bg);color:var(--fg);border:1px solid var(--line);border-radius:14px;font:inherit;font-size:.88rem;line-height:1.85;white-space:pre-wrap;overflow-wrap:anywhere}
+.deid textarea{resize:vertical}
+.deid textarea:focus{outline:2px solid color-mix(in srgb,var(--accent) 55%,transparent);outline-offset:1px}
+.tk{padding:1px 6px;border-radius:6px;font-size:.92em;color:var(--c,var(--accent));background:color-mix(in srgb,var(--c,var(--accent)) 16%,transparent);border:1px solid color-mix(in srgb,var(--c,var(--accent)) 38%,transparent)}
+.tk[data-t=P]{--c:#4aa3ff}.tk[data-t=ID]{--c:#ff6369}.tk[data-t=T]{--c:#e5a000}.tk[data-t=E]{--c:#a98af0}.tk[data-t=C]{--c:#2fb86b}.tk[data-t=N]{--c:#1fb5ba}
+.tk.rs{--c:#2fb86b}.tk.bd{--c:#ff5a5f}
+.deid-sum{margin:10px 0 4px;color:var(--muted);font-size:.88rem}
+.deid-mapbox{margin:4px 0 18px}
+.deid-mapbox summary{cursor:pointer;color:var(--accent);font-size:.85rem;letter-spacing:.06em}
+.deid-mapbox .mon-table{margin-top:10px}
+.deid-mapbox table{min-width:0;font-size:.85rem}
+.deid-mapbox td:first-child{text-align:center;padding-left:10px}
+.deid-actions{display:flex;gap:10px}
+.deid-warn{margin:12px 0 0;font-size:.88rem;min-height:1.6em}
+@media(max-width:700px){.deid-grid{grid-template-columns:1fr}.deid{padding:18px 16px}}
