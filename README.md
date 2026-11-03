@@ -6,7 +6,7 @@
 1. 搜尋 `your-id`、`you@example.com` 換成你的資料
 2. 換掉 `assets/avatar.jpg`
 3. 英文版文字在 `script.js` 的 `dict.en`；中文版直接寫在 `index.html`
-4. 預覽圖目前使用 `assets/avatar.jpg`，之後可換成 1200×627 的圖片
+4. 分享預覽圖使用 `assets/og-image.png`（1200×627 的純文字圖），要改文字可重新製作同尺寸圖片取代
 
 ## 互動示範
 - `demo.js`：報表匯入監測（虛構資料）
