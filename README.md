@@ -8,6 +8,10 @@
 3. 英文版文字在 `script.js` 的 `dict.en`；中文版直接寫在 `index.html`
 4. 預覽圖目前使用 `assets/avatar.jpg`，之後可換成 1200×627 的圖片
 
+## 互動示範
+- `demo.js`：報表匯入監測（虛構資料）
+- `deid.js`：可還原去識別化的簡化示範，全部在瀏覽器內執行、不上傳資料，範例皆為虛構。這只是展示用，不是去識別化工具本體（本體規劃為本機離線執行，放在獨立 repo）。
+
 ## 部署（GitHub Pages）
 Settings → Pages → Deploy from a branch → 選 main / root。網址：`https://ray8806.github.io/Personal-website/`
 
