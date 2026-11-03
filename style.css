@@ -117,3 +117,6 @@ a.card{color:inherit}
 .deid-custom .chips button:hover{color:#ff5a5f}
 .tk[data-t=D]{--c:#ff8a3d}
 .deid-custom .deid-warn.ok{color:#2fb86b}
+
+/* 淺色模式：數字卡片的銀色漸層對比不足，改用較深的灰階 */
+:root:not([data-theme=dark]) .stats b{background:linear-gradient(135deg,#23282d,#565d65 50%,#23282d);-webkit-background-clip:text;background-clip:text;font-weight:300}
