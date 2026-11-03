@@ -14,7 +14,7 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="627">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="style.css?v=17">
+  <link rel="stylesheet" href="style.css?v=18">
 </head>
 <body>
   <header class="nav">
@@ -155,9 +155,9 @@
           </table>
         </div>
         <div class="mon-actions">
-          <button class="btn primary" id="mon-run" data-i18n="mon_run">重新檢查</button>
-          <button class="btn" id="mon-inject" data-i18n="mon_inject">模擬匯入異常</button>
-          <button class="btn" id="mon-reset" data-i18n="mon_reset">恢復正常</button>
+          <button class="btn on" id="mon-run" aria-pressed="true" data-i18n="mon_run">重新檢查</button>
+          <button class="btn" id="mon-inject" aria-pressed="false" data-i18n="mon_inject">模擬匯入異常</button>
+          <button class="btn" id="mon-reset" aria-pressed="false" data-i18n="mon_reset">恢復正常</button>
         </div>
         <p class="mon-msg" id="mon-msg" role="status"></p>
       </div>
@@ -228,8 +228,8 @@
   </main>
 
   <footer>© <span id="year"></span> 蔡承勳<small data-i18n="disclaimer">本站為個人網站，內容僅代表個人，非中華賓士官方網站。</small></footer>
-  <script src="script.js?v=17"></script>
-  <script src="demo.js?v=17"></script>
-  <script src="deid.js?v=17"></script>
+  <script src="script.js?v=18"></script>
+  <script src="demo.js?v=18"></script>
+  <script src="deid.js?v=18"></script>
 </body>
 </html>
