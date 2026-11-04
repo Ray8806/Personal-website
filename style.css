@@ -153,3 +153,8 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .bullets li::marker{color:var(--accent)}
 .timeline h3{font-size:1.2rem;font-weight:500}
 .timeline time{font-size:.88rem;font-weight:500}
+
+/* 專案卡片：標題不換行（桌機兩欄加寬，手機縮小字級） */
+#projects .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+#projects .card h3{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media(max-width:700px){#projects .grid{grid-template-columns:minmax(0,1fr)}#projects .card h3{font-size:1rem;letter-spacing:.02em}}

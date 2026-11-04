@@ -3,7 +3,7 @@ const dict = {
     stat1_n:"Nationwide", stat2_n:"Daily", name:"Ray Tsai",
     chip1:"System administration", chip2:"IT asset management", chip3:"Endpoint security monitoring", chip4:"IT procurement", chip5:"AI applications", chip6:"Process automation", chip7:"Data monitoring",
     job_t:"Systems Engineer · IT Dept., Mercedes-Benz Taiwan", gu_t:"GrowUp",
-    tag1:"AI project", c1_t:"Daily report-import monitoring", tag2:"Operations", c2_t:"Nationwide IT equipment management", tag3:"Security", c3_t:"Endpoint virus monitoring", mail_btn:"Email me",
+    tag1:"AI project", c1_t:"Daily report-import monitoring", tag2:"Operations", c2_t:"IT equipment management", tag3:"Security", c3_t:"Endpoint virus monitoring", mail_btn:"Email me",
     nav_about:"About", nav_exp:"Experience", nav_award:"Awards", nav_demo:"Demo", nav_proj:"Projects & Scope", nav_contact:"Contact",
     hero_hi:"Hi, I'm", hero_role:"Systems Engineer · IT Dept., Mercedes-Benz Taiwan",
     hero_lead:"I keep nationwide IT infrastructure stable and secure, and use AI to automate repetitive monitoring so problems are caught before they spread.",
