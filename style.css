@@ -158,3 +158,9 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 #projects .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 #projects .card h3{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 @media(max-width:700px){#projects .grid{grid-template-columns:minmax(0,1fr)}#projects .card h3{font-size:1rem;letter-spacing:.02em}}
+
+/* 數字卡片：數字加單位，標籤改成單一短句 */
+.stats b{font-size:2.6rem;font-weight:300;letter-spacing:.02em;line-height:1.3}
+.stats b small{font-size:.38em;font-weight:400;letter-spacing:.06em;margin:0 .35em;-webkit-text-fill-color:var(--muted);color:var(--muted)}
+.stats b small:first-child{margin-left:0}
+.stats span{font-size:.9rem;letter-spacing:.06em}
