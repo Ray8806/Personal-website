@@ -1,11 +1,15 @@
 const dict = {
   en: {
+    stat1_n:"Nationwide", stat2_n:"Daily", name:"Ray Tsai",
+    chip1:"System administration", chip2:"IT asset management", chip3:"Endpoint security monitoring", chip4:"IT procurement", chip5:"AI applications", chip6:"Process automation", chip7:"Data monitoring",
+    job_t:"Systems Engineer · IT Dept., Mercedes-Benz Taiwan", gu_t:"GrowUp",
+    tag1:"AI project", c1_t:"Daily report-import monitoring", tag2:"Operations", c2_t:"Nationwide IT equipment management", tag3:"Security", c3_t:"Endpoint virus monitoring", mail_btn:"Email me",
     nav_about:"About", nav_exp:"Experience", nav_award:"Awards", nav_demo:"Demo", nav_proj:"Projects & Scope", nav_contact:"Contact",
     hero_hi:"Hi, I'm", hero_role:"Systems Engineer · IT Dept., Mercedes-Benz Taiwan",
     hero_lead:"I keep nationwide IT infrastructure stable and secure, and use AI to automate repetitive monitoring so problems are caught before they spread.",
     cta_li:"Connect on LinkedIn",
-    stat1:"Nationwide IT equipment", stat2:"Daily report-import monitoring", stat3:"AI in real workflows",
-    about_p:"I'm a systems engineer in the IT department at Mercedes-Benz Taiwan (中華賓士). My work spans device operations, endpoint security and procurement. Beyond keeping equipment at every site running smoothly, I apply AI in practice, for example designing a system that automatically checks whether daily report data is imported correctly, cutting manual verification time and oversights.",
+    stat1:"IT equipment under management", stat2:"report-import monitoring", stat3:"applied in real workflows",
+    about_p:"I'm a systems engineer in the IT department at Mercedes-Benz Taiwan. My work spans device operations, endpoint security and procurement. Beyond keeping equipment at every site running smoothly, I apply AI in practice, for example designing a system that automatically checks whether daily report data is imported correctly, cutting manual verification time and oversights.",
     exp1:"Manage IT equipment across all sites nationwide to keep daily operations running",
     exp2:"Monitor computers for viruses and malware to protect endpoint security",
     exp3:"Responsible for procurement and planning of IT equipment",
@@ -40,6 +44,10 @@ function setLang(l) {
   document.querySelectorAll("[data-i18n]").forEach(el => { el.innerHTML = dict[l][el.dataset.i18n]; });
   document.getElementById("lang").textContent = l === "en" ? "中" : "EN";
   safe(() => localStorage.setItem("lang", l));
+  document.title = l === "en" ? "Ray Tsai | Systems Engineer · Mercedes-Benz Taiwan" : "蔡承勳 | 系統工程師 · 中華賓士";
+  var av = document.querySelector(".avatar"); if (av) av.alt = l === "en" ? "Ray Tsai" : "蔡承勳";
+  var aw = document.querySelector(".award img"); if (aw) aw.alt = l === "en" ? "1st place, Education Open Data category, 25th InnoServe Awards" : "第 25 屆 InnoServe Awards 大專校院資訊應用服務創新競賽 教育開放資料組第一名";
+  var dc = document.getElementById("deid-chips"); if (dc) dc.setAttribute("aria-label", l === "en" ? "Custom terms" : "自訂詞");
   if (window.onLangChange) window.onLangChange();
 }
 function setTheme(t) {
