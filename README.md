@@ -15,6 +15,10 @@
 ## 部署（GitHub Pages）
 Settings → Pages → Deploy from a branch → 選 main / root。網址：`https://ray8806.github.io/Personal-website/`
 
+## SEO 與圖示
+- 網站圖示：`assets/favicon.svg`、`assets/apple-touch-icon.png`
+- 搜尋引擎：`robots.txt`、`sitemap.xml`，以及 `index.html` 內的結構化資料（JSON-LD）
+
 ## 放到 LinkedIn
 - Profile → Contact info → Website，貼上網址
 - 或在 Featured 區塊新增連結；貼文分享時會用 og 標籤產生預覽卡
