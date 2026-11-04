@@ -73,27 +73,43 @@
     } else { msg.textContent = ""; }
   }
 
+  var flowEl = function () { return document.querySelectorAll("#flow li"); };
+  function setFlow(n) {
+    flowEl().forEach(function (li, i) { li.className = i < n ? "done" : (i === n ? "active" : ""); });
+  }
+  function lock(v) { ["mon-run", "mon-inject", "mon-reset"].forEach(function (id) { $(id).disabled = v; }); }
+
   function run() {
     if (busy) return;
-    busy = true;
-    ["mon-run", "mon-inject", "mon-reset"].forEach(function (id) { $(id).disabled = true; });
+    busy = true; lock(true);
     rows.forEach(function (r) { r.state = "idle"; });
+    $("flow-mail").textContent = "";
     render();
-    var i = 0;
-    (function step() {
-      if (i >= rows.length) {
-        busy = false;
-        ["mon-run", "mon-inject", "mon-reset"].forEach(function (id) { $(id).disabled = false; });
-        render();
-        return;
-      }
-      rows[i].state = "checking"; render();
-      setTimeout(function () {
-        var r = rows[i];
-        r.state = r.src === r.db ? "ok" : "bad";
-        i++; render(); setTimeout(step, 120);
-      }, 260);
-    })();
+    setFlow(0);
+    var wait = function (ms, fn) { setTimeout(fn, ms); };
+    wait(350, function () { setFlow(1);
+    wait(350, function () { setFlow(2);
+    wait(350, function () { setFlow(3); checkRows(0); }); }); });
+  }
+
+  function checkRows(i) {
+    if (i >= rows.length) {
+      setFlow(4);
+      return setTimeout(function () {
+        setFlow(5);
+        setTimeout(function () {
+          var failed = rows.some(function (r) { return r.state === "bad"; });
+          $("flow-mail").textContent = failed ? (en() ? "Alert sent" : "已寄出異常通報") : (en() ? "Summary sent" : "已寄出正常通知");
+          setFlow(6); busy = false; lock(false); render();
+        }, 400);
+      }, 350);
+    }
+    rows[i].state = "checking"; render();
+    setTimeout(function () {
+      var r = rows[i];
+      r.state = r.src === r.db ? "ok" : "bad";
+      render(); setTimeout(function () { checkRows(i + 1); }, 120);
+    }, 260);
   }
 
   function inject() {
