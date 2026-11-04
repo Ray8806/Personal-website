@@ -1,9 +1,9 @@
 /* 黑 × 銀 × 科技藍：參考汽車品牌常見的沉穩高質感視覺語彙（非官方，未使用任何商標圖樣） */
-:root{--bg:#fff;--fg:#111214;--muted:#5d6268;--card:#f4f5f6;--line:#dcdfe2;--accent:#00799e;--accent-fg:#fff;--silver:linear-gradient(135deg,#8d9399,#d9dde0 45%,#9aa0a6)}
-:root[data-theme=dark]{--bg:#08090a;--fg:#f4f5f6;--muted:#9aa0a6;--card:#121315;--line:#26282b;--accent:#00adef;--accent-fg:#08090a}
+:root{--bg:#fff;--fg:#111214;--muted:#4d5359;--card:#f4f5f6;--line:#dcdfe2;--accent:#00799e;--accent-fg:#fff;--silver:linear-gradient(135deg,#8d9399,#d9dde0 45%,#9aa0a6)}
+:root[data-theme=dark]{--bg:#08090a;--fg:#f4f5f6;--muted:#b4bac0;--card:#121315;--line:#26282b;--accent:#00adef;--accent-fg:#08090a}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--bg);color:var(--fg);font:300 17px/1.8 system-ui,-apple-system,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;-webkit-font-smoothing:antialiased}
+body{margin:0;background:var(--bg);color:var(--fg);font:400 17px/1.8 system-ui,-apple-system,"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
 main,.nav,footer{max-width:960px;margin:0 auto;padding-left:24px;padding-right:24px}
 .nav{display:flex;justify-content:space-between;align-items:center;padding-top:20px;padding-bottom:20px;position:sticky;top:0;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);z-index:5;max-width:none;border-bottom:1px solid var(--line);padding-left:max(24px,calc((100% - 960px)/2 + 24px));padding-right:max(24px,calc((100% - 960px)/2 + 24px))}
@@ -32,7 +32,7 @@ section{padding:72px 0}
 h2{font-size:1.5rem;font-weight:300;letter-spacing:.2em;margin:0 0 24px}
 h2::after{content:"";display:block;width:48px;height:1px;background:var(--silver);margin-top:14px}
 .chips{display:flex;flex-wrap:wrap;gap:10px;list-style:none;padding:0;margin:28px 0 0}
-.chips li{border:1px solid var(--line);padding:5px 16px;border-radius:999px;font-size:.82rem;letter-spacing:.08em;color:var(--muted)}
+.chips li{border:1px solid color-mix(in srgb,var(--fg) 28%,transparent);background:color-mix(in srgb,var(--fg) 6%,transparent);padding:7px 18px;border-radius:999px;font-size:.95rem;font-weight:500;letter-spacing:.06em;color:var(--fg)}
 .timeline{border-left:1px solid var(--line);padding-left:28px}
 .timeline article{position:relative}
 .timeline article::before{content:"";position:absolute;left:-33px;top:10px;width:9px;height:9px;background:var(--accent);border-radius:50%;box-shadow:0 0 0 4px color-mix(in srgb,var(--accent) 22%,transparent)}
@@ -146,3 +146,10 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 #bg{position:fixed;inset:0;z-index:-1;pointer-events:none}
 .card,.monitor,.award,.stats div,.flow li{background:color-mix(in srgb,var(--card) 78%,transparent);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
 .hero h1{text-shadow:0 0 40px color-mix(in srgb,var(--accent) 35%,transparent)}
+
+/* 可讀性：時間軸與條列文字提高對比與字級 */
+.timeline p,.bullets{color:color-mix(in srgb,var(--fg) 88%,transparent);font-size:1rem}
+.bullets li{margin-bottom:8px;line-height:1.75}
+.bullets li::marker{color:var(--accent)}
+.timeline h3{font-size:1.2rem;font-weight:500}
+.timeline time{font-size:.88rem;font-weight:500}
