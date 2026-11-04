@@ -14,7 +14,7 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="627">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="style.css?v=20">
+  <link rel="stylesheet" href="style.css?v=21">
 </head>
 <body>
   <header class="nav">
@@ -65,7 +65,7 @@
             <li data-i18n="exp1">管理全省據點的資訊設備，確保日常營運順暢</li>
             <li data-i18n="exp2">監測電腦是否遭受病毒或惡意程式感染，維護端點資安</li>
             <li data-i18n="exp3">負責資訊相關設備的採購與規劃</li>
-            <li data-i18n="exp4">運用 AI 設計每日報表資料匯入監測系統，自動偵測資料是否正常匯入</li>
+            <li data-i18n="exp4">運用 AI 輔助設計，並以 n8n 建立每日報表匯入監測流程，自動比對資料並以 Email 通報結果</li>
           </ul>
         </article>
         <article>
@@ -109,7 +109,7 @@
         <a class="card" href="#demo">
           <span class="tag">AI 專案</span>
           <h3>每日報表匯入監測系統</h3>
-          <p data-i18n="p1">以 AI 協助設計，自動檢查每日報表資料是否正常匯入，異常時即時發現，取代人工逐筆核對。</p>
+          <p data-i18n="p1">以 AI 輔助設計、n8n 自動化執行：定時讀取 log 與資料檔進行交叉比對，並將結果以 Email 通報，取代人工逐筆核對。</p>
         </a>
         <div class="card">
           <span class="tag">維運</span>
@@ -131,7 +131,15 @@
 
     <section id="demo">
       <h2 data-i18n="demo_h">互動示範：報表匯入監測</h2>
-      <p class="demo-note" data-i18n="demo_note">以下為示意畫面，資料皆為虛構，用來示範「每日報表匯入監測」的概念：比對來源檔案筆數與資料庫匯入筆數，異常時立即標示。你可以自己操作看看。</p>
+      <p class="demo-note" data-i18n="demo_note">以下為示意畫面，資料皆為虛構，用來示範「每日報表匯入監測」的概念：比對來源檔案筆數與資料庫匯入筆數，異常時立即標示。實際流程以 n8n 建置，週一至週五定時執行，也可手動觸發。你可以自己操作看看。</p>
+      <ol class="flow" id="flow" aria-label="n8n workflow">
+        <li><i>1</i><span data-i18n="flow_1">排程觸發</span></li>
+        <li><i>2</i><span data-i18n="flow_2">讀取 log 檔</span></li>
+        <li><i>3</i><span data-i18n="flow_3">讀取 CSV 檔案</span></li>
+        <li><i>4</i><span data-i18n="flow_4">交叉比對</span></li>
+        <li><i>5</i><span data-i18n="flow_5">整理結果</span></li>
+        <li><i>6</i><span data-i18n="flow_6">寄送 Email 通報</span><small id="flow-mail"></small></li>
+      </ol>
       <div class="monitor" id="monitor">
         <div class="mon-head">
           <b data-i18n="mon_title">資料稽核彙整報告</b>
@@ -228,8 +236,8 @@
   </main>
 
   <footer>© <span id="year"></span> 蔡承勳<small data-i18n="disclaimer">本站為個人網站，內容僅代表個人，非中華賓士官方網站。</small></footer>
-  <script src="script.js?v=20"></script>
-  <script src="demo.js?v=20"></script>
-  <script src="deid.js?v=20"></script>
+  <script src="script.js?v=21"></script>
+  <script src="demo.js?v=21"></script>
+  <script src="deid.js?v=21"></script>
 </body>
 </html>

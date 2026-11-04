@@ -81,6 +81,17 @@ footer small{display:block;margin-top:6px;opacity:.7}
 .mon-msg{margin:0;padding:6px 26px 22px;min-height:2.2em;font-size:.9rem}
 @media(max-width:600px){.mon-head{flex-direction:column;gap:4px}}
 
+.flow{display:flex;list-style:none;margin:0 0 20px;padding:0;gap:8px;flex-wrap:wrap}
+.flow li{flex:1 1 130px;position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;padding:16px 10px;background:var(--card);border:1px solid var(--line);border-radius:16px;text-align:center;font-size:.85rem;color:var(--muted);transition:all .3s}
+.flow li i{font-style:normal;width:28px;height:28px;line-height:26px;border-radius:50%;border:1px solid var(--line);font-size:.8rem}
+.flow li small{position:absolute;bottom:-1.5em;left:0;right:0;font-size:.72rem;color:var(--accent)}
+.flow li.active{color:var(--fg);border-color:var(--accent);box-shadow:0 0 0 3px color-mix(in srgb,var(--accent) 20%,transparent)}
+.flow li.active i{background:var(--accent);color:var(--accent-fg);border-color:var(--accent)}
+.flow li.done{color:var(--fg)}
+.flow li.done i{border-color:#2fb86b;color:#2fb86b}
+.flow+.monitor{margin-top:30px}
+@media(max-width:600px){.flow li{flex:1 1 44%}}
+
 /* 去識別化互動示範 */
 a.card{color:inherit}
 .deid{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px 26px 20px}
