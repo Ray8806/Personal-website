@@ -8,7 +8,7 @@ const dict = {
     hero_hi:"Hi, I'm", hero_role:"Systems Engineer · IT Dept., Capital Motors, Inc.",
     hero_lead:"I keep nationwide IT infrastructure stable and secure, and use AI to automate repetitive monitoring so problems are caught before they spread.",
     cta_li:"Connect on LinkedIn",
-    stat1:"nationwide IT equipment management", stat2:"under management", stat3:"saved after the monitoring workflow went live",
+    stat1:"nationwide IT coverage", stat2:"under management", stat3:"saved by the workflow",
     about_p:"I'm a systems engineer in the IT department at Capital Motors, Inc., the largest independent Mercedes-Benz dealer under Mercedes-Benz Taiwan. My work spans device operations, endpoint security and procurement. Beyond keeping equipment at every site running smoothly, I apply AI in practice, for example designing a system that automatically checks whether daily report data is imported correctly, cutting manual verification time and oversights.",
     exp1:"Manage 1,000+ IT devices across 14 sites nationwide to keep daily operations running",
     exp2:"Monitor computers for viruses and malware to protect endpoint security",
