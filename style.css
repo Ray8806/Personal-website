@@ -132,3 +132,17 @@ a.card{color:inherit}
 
 /* 淺色模式：數字卡片的銀色漸層對比不足，改用較深的灰階 */
 :root:not([data-theme=dark]) .stats b{background:linear-gradient(135deg,#23282d,#565d65 50%,#23282d);-webkit-background-clip:text;background-clip:text;font-weight:300}
+
+/* 科技風背景：網格 + 光暈 + 動態節點（bg.js） */
+body{background:
+  radial-gradient(900px 520px at 50% -8%,color-mix(in srgb,var(--accent) 22%,transparent),transparent 70%),
+  radial-gradient(700px 480px at 100% 55%,rgba(124,92,255,.12),transparent 70%),
+  radial-gradient(600px 420px at 0% 85%,color-mix(in srgb,var(--accent) 12%,transparent),transparent 70%),
+  var(--bg);background-attachment:fixed}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background-image:linear-gradient(color-mix(in srgb,var(--accent) 9%,transparent) 1px,transparent 1px),linear-gradient(90deg,color-mix(in srgb,var(--accent) 9%,transparent) 1px,transparent 1px);
+  background-size:56px 56px;
+  -webkit-mask-image:radial-gradient(ellipse at 50% 30%,#000 25%,transparent 78%);mask-image:radial-gradient(ellipse at 50% 30%,#000 25%,transparent 78%)}
+#bg{position:fixed;inset:0;z-index:-1;pointer-events:none}
+.card,.monitor,.award,.stats div,.flow li{background:color-mix(in srgb,var(--card) 78%,transparent);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.hero h1{text-shadow:0 0 40px color-mix(in srgb,var(--accent) 35%,transparent)}
