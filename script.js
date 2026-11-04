@@ -2,14 +2,14 @@ const dict = {
   en: {
     stat1_n:"14<small>sites</small>", stat2_n:"1,000+<small>devices</small>", stat3_n:"~30<small>min</small>", name:"Ray Tsai",
     chip1:"System administration", chip2:"IT asset management", chip3:"Endpoint security monitoring", chip4:"IT procurement", chip5:"AI applications", chip6:"Process automation", chip7:"Data monitoring",
-    job_t:"Systems Engineer · IT Dept., Mercedes-Benz dealership in Taiwan", gu_t:"GrowUp",
+    job_t:"Systems Engineer · IT Dept., Capital Motors, Inc.", gu_t:"GrowUp",
     tag1:"AI project", c1_t:"Daily report-import monitoring", tag2:"Operations", c2_t:"IT equipment management", tag3:"Security", c3_t:"Endpoint virus monitoring", mail_btn:"Email me",
     nav_about:"About", nav_exp:"Experience", nav_award:"Awards", nav_demo:"Demo", nav_proj:"Projects & Scope", nav_contact:"Contact",
-    hero_hi:"Hi, I'm", hero_role:"Systems Engineer · IT Dept., Mercedes-Benz dealership in Taiwan",
+    hero_hi:"Hi, I'm", hero_role:"Systems Engineer · IT Dept., Capital Motors, Inc.",
     hero_lead:"I keep nationwide IT infrastructure stable and secure, and use AI to automate repetitive monitoring so problems are caught before they spread.",
     cta_li:"Connect on LinkedIn",
     stat1:"nationwide IT coverage", stat2:"under management", stat3:"saved by the workflow",
-    about_p:"I'm a systems engineer in the IT department of a Mercedes-Benz dealership in Taiwan. My work spans device operations, endpoint security and procurement. Beyond keeping equipment at every site running smoothly, I apply AI in practice, for example designing a system that automatically checks whether daily report data is imported correctly, cutting manual verification time and oversights.",
+    about_p:"I'm a systems engineer in the IT department at Capital Motors, Inc. My work spans device operations, endpoint security and procurement. Beyond keeping equipment at every site running smoothly, I apply AI in practice, for example designing a system that automatically checks whether daily report data is imported correctly, cutting manual verification time and oversights.",
     exp1:"Manage 1,000+ IT devices across 14 sites nationwide to keep daily operations running",
     exp2:"Monitor computers for viruses and malware to protect endpoint security",
     exp3:"Responsible for procurement and planning of IT equipment",
@@ -17,7 +17,7 @@ const dict = {
     p1:"Designed with AI assistance and automated in n8n: on a schedule it reads logs and data files, cross-checks them and emails the result, replacing manual line-by-line checks and saving about 30 minutes.",
     p2:"Overseeing the status, maintenance and lifecycle of 1,000+ computers and peripherals across 14 sites.",
     p3:"Continuously monitoring computers for infections and responding early to reduce security risk.",
-    award_h:"Awards", award_t:"1st Place, Education Open Data Category", award_p:"With my five-person university capstone team, won 1st place in the Education Open Data category at the 25th InnoServe Awards (2020 International ICT Innovative Services Awards), a national university-level competition. My part was image recognition: embedding the live video feed in the app and sending frames captured by a Raspberry Pi to the Google Vision API to recognize everyday objects, with recognition accuracy above 80%.", demo_tag:"2020 · University capstone project", demo_p:"A learning app for children: kids snap a photo of something they are curious about and get answers through AI image recognition. It adds game-style learning levels and uses open data from Taiwan's Ministry of Education and Ministry of Culture to recommend suitable picture books and materials, while parents can follow their child's progress.", gap_time:"2021 — 2025", gap_t:"Preparing for national civil service exams", gap_p:"After graduating, I spent about three years focused on preparing for national exams, then returned to IT and joined the IT department at a Mercedes-Benz dealership in Taiwan.", exp_time:"Nov 2025 — Present", edu_time:"Graduated 2021", edu_t:"Ming Chuan University · B.A. in Information Management", edu_p:"My capstone team won 1st place in the Education Open Data category at the InnoServe Awards.", demo_h:"Interactive demo: report import monitoring", demo_note:"A mock-up with entirely fictional data, illustrating the idea of daily report-import monitoring: compare the record count in the source file with the count imported into the database, and flag any mismatch right away. Try it yourself.",
+    award_h:"Awards", award_t:"1st Place, Education Open Data Category", award_p:"With my five-person university capstone team, won 1st place in the Education Open Data category at the 25th InnoServe Awards (2020 International ICT Innovative Services Awards), a national university-level competition. My part was image recognition: embedding the live video feed in the app and sending frames captured by a Raspberry Pi to the Google Vision API to recognize everyday objects, with recognition accuracy above 80%.", demo_tag:"2020 · University capstone project", demo_p:"A learning app for children: kids snap a photo of something they are curious about and get answers through AI image recognition. It adds game-style learning levels and uses open data from Taiwan's Ministry of Education and Ministry of Culture to recommend suitable picture books and materials, while parents can follow their child's progress.", gap_time:"2021 — 2025", gap_t:"Preparing for national civil service exams", gap_p:"After graduating, I spent about three years focused on preparing for national exams, then returned to IT and joined the IT department at Capital Motors, Inc..", exp_time:"Nov 2025 — Present", edu_time:"Graduated 2021", edu_t:"Ming Chuan University · B.A. in Information Management", edu_p:"My capstone team won 1st place in the Education Open Data category at the InnoServe Awards.", demo_h:"Interactive demo: report import monitoring", demo_note:"A mock-up with entirely fictional data, illustrating the idea of daily report-import monitoring: compare the record count in the source file with the count imported into the database, and flag any mismatch right away. Try it yourself.",
     flow_1:"Scheduled trigger", flow_2:"Read log file", flow_3:"Read CSV files", flow_4:"Cross-check", flow_5:"Compile results", flow_6:"Email notification", mon_title:"Data Audit Summary", mon_total:"Checks", mon_bad:"Anomalies", mon_status:"Audit status",
     mon_c1:"Report", mon_c2:"Source file rows", mon_c3:"Imported rows", mon_c4:"Import time", mon_c5:"Result",
     mon_run:"Re-run check", mon_inject:"Simulate import failure", mon_reset:"Reset to normal",
@@ -29,7 +29,7 @@ const dict = {
     deid_map:"View mapping table (demo only; the real tool stores it encrypted)",
     deid_ai:"③ Text returned by an AI (editable, try changing a token)", deid_sim:"Simulate AI altering tokens", deid_rest:"④ Restored text (green = restored)",
     deid_masknote:"Mask mode only keeps part of the format and does not store the original values, so it cannot be restored. Use token mode when you need to restore.",
-    disclaimer:"Personal website. Views are my own and this is not an official site of my employer or Mercedes-Benz Taiwan.", contact_h:"Let's talk", contact_p:"Happy to chat about IT operations, security and practical AI."
+    disclaimer:"Personal website. Views are my own and this is not an official site of Capital Motors, Inc. or Mercedes-Benz Taiwan.", contact_h:"Let's talk", contact_p:"Happy to chat about IT operations, security and practical AI."
   }
 };
 const zh = {};
@@ -44,7 +44,7 @@ function setLang(l) {
   document.querySelectorAll("[data-i18n]").forEach(el => { el.innerHTML = dict[l][el.dataset.i18n]; });
   document.getElementById("lang").textContent = l === "en" ? "中" : "EN";
   safe(() => localStorage.setItem("lang", l));
-  document.title = l === "en" ? "Ray Tsai | Systems Engineer · Mercedes-Benz dealership in Taiwan" : "蔡承勳 | 系統工程師 · 中華賓士";
+  document.title = l === "en" ? "Ray Tsai | Systems Engineer · Capital Motors, Inc." : "蔡承勳 | 系統工程師 · 中華賓士";
   var av = document.querySelector(".avatar"); if (av) av.alt = l === "en" ? "Ray Tsai" : "蔡承勳";
   var aw = document.querySelector(".award img"); if (aw) aw.alt = l === "en" ? "1st place, Education Open Data category, 25th InnoServe Awards" : "第 25 屆 InnoServe Awards 大專校院資訊應用服務創新競賽 教育開放資料組第一名";
   var dc = document.getElementById("deid-chips"); if (dc) dc.setAttribute("aria-label", l === "en" ? "Custom terms" : "自訂詞");
