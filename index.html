@@ -14,7 +14,7 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="627">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="style.css?v=24">
+  <link rel="stylesheet" href="style.css?v=25">
 </head>
 <body>
   <header class="nav">
@@ -35,7 +35,7 @@
     <section class="hero">
       <img class="avatar" src="assets/avatar.jpg" alt="蔡承勳">
       <p class="eyebrow" data-i18n="hero_hi">你好，我是</p>
-      <h1>蔡承勳</h1>
+      <h1 data-i18n="name">蔡承勳</h1>
       <p class="role" data-i18n="hero_role">系統工程師 · 中華賓士 資訊部</p>
       <p class="lead" data-i18n="hero_lead">我負責維持全省資訊環境穩定與安全，並善用 AI 把重複性的監控工作自動化，讓資料與系統問題在被發現之前就先被處理。</p>
       <div class="cta">
@@ -44,15 +44,15 @@
     </section>
 
     <section class="stats">
-      <div><b>全省</b><span data-i18n="stat1">資訊設備管理範圍</span></div>
-      <div><b>每日</b><span data-i18n="stat2">報表匯入自動監測</span></div>
+      <div><b data-i18n="stat1_n">全省</b><span data-i18n="stat1">資訊設備管理範圍</span></div>
+      <div><b data-i18n="stat2_n">每日</b><span data-i18n="stat2">報表匯入自動監測</span></div>
       <div><b>AI</b><span data-i18n="stat3">導入實際工作流程</span></div>
     </section>
 
     <section id="about">
       <h2 data-i18n="nav_about">關於我</h2>
       <p data-i18n="about_p">我是中華賓士資訊部的系統工程師，日常工作橫跨設備維運、資安防護與採購。除了確保全省據點的資訊設備穩定運作，我也積極把 AI 用在實務上，例如設計一套能自動檢查每日報表資料是否正常匯入的監測系統，減少人工逐一核對的時間與疏漏。</p>
-      <ul class="chips"><li>系統管理</li><li>IT 資產管理</li><li>端點資安監測</li><li>資訊設備採購</li><li>AI 應用</li><li>流程自動化</li><li>資料監控</li></ul>
+      <ul class="chips"><li data-i18n="chip1">系統管理</li><li data-i18n="chip2">IT 資產管理</li><li data-i18n="chip3">端點資安監測</li><li data-i18n="chip4">資訊設備採購</li><li data-i18n="chip5">AI 應用</li><li data-i18n="chip6">流程自動化</li><li data-i18n="chip7">資料監控</li></ul>
     </section>
 
     <section id="experience">
@@ -60,7 +60,7 @@
       <div class="timeline">
         <article>
           <time data-i18n="exp_time">2025 年 11 月 — 現在</time>
-          <h3>系統工程師 · 中華賓士 資訊部</h3>
+          <h3 data-i18n="job_t">系統工程師 · 中華賓士 資訊部</h3>
           <ul class="bullets">
             <li data-i18n="exp1">管理全省據點的資訊設備，確保日常營運順暢</li>
             <li data-i18n="exp2">監測電腦是否遭受病毒或惡意程式感染，維護端點資安</li>
@@ -97,7 +97,7 @@
         </video>
         <figcaption>
           <span class="tag" data-i18n="demo_tag">2020 · 大學專題成果</span>
-          <h3>GrowUp 學習趣</h3>
+          <h3 data-i18n="gu_t">GrowUp 學習趣</h3>
           <p data-i18n="demo_p">兒童學習 APP：孩子拍下好奇的事物，即可透過 AI 影像辨識得到答案；搭配遊戲式闖關學習，並整合教育部、文化部等政府開放資料，推薦適合的繪本與教材，讓家長掌握孩子的學習狀況。</p>
         </figcaption>
       </figure>
@@ -107,18 +107,18 @@
       <h2 data-i18n="nav_proj">重點專案與職責</h2>
       <div class="grid">
         <a class="card" href="#demo">
-          <span class="tag">AI 專案</span>
-          <h3>每日報表匯入監測系統</h3>
+          <span class="tag" data-i18n="tag1">AI 專案</span>
+          <h3 data-i18n="c1_t">每日報表匯入監測系統</h3>
           <p data-i18n="p1">以 AI 輔助設計、n8n 自動化執行：定時讀取 log 與資料檔進行交叉比對，並將結果以 Email 通報，取代人工逐筆核對。</p>
         </a>
         <div class="card">
-          <span class="tag">維運</span>
-          <h3>全省資訊設備管理</h3>
+          <span class="tag" data-i18n="tag2">維運</span>
+          <h3 data-i18n="c2_t">全省資訊設備管理</h3>
           <p data-i18n="p2">統籌各據點電腦與周邊設備的狀態、維護與生命週期。</p>
         </div>
         <div class="card">
-          <span class="tag">資安</span>
-          <h3>端點病毒監測</h3>
+          <span class="tag" data-i18n="tag3">資安</span>
+          <h3 data-i18n="c3_t">端點病毒監測</h3>
           <p data-i18n="p3">持續監控電腦是否中毒，及早處置以降低資安風險。</p>
         </div>
         <a class="card" href="#deid">
@@ -229,16 +229,16 @@
       <h2 data-i18n="contact_h">一起聊聊吧</h2>
       <p data-i18n="contact_p">歡迎聊聊 IT 維運、資安與 AI 實務應用。</p>
       <div class="cta">
-        <a class="btn primary" href="mailto:swashouse1@gmail.com">寄信給我</a>
+        <a class="btn primary" href="mailto:swashouse1@gmail.com" data-i18n="mail_btn">寄信給我</a>
         <a class="btn" href="https://www.linkedin.com/in/%E6%89%BF%E5%8B%B3-%E8%94%A1-8613b3425" target="_blank" rel="noopener">LinkedIn</a>
               </div>
     </section>
   </main>
 
-  <footer>© <span id="year"></span> 蔡承勳<small data-i18n="disclaimer">本站為個人網站，內容僅代表個人，非中華賓士官方網站。</small></footer>
-  <script src="bg.js?v=24"></script>
-  <script src="script.js?v=24"></script>
-  <script src="demo.js?v=24"></script>
-  <script src="deid.js?v=24"></script>
+  <footer>© <span id="year"></span> <span data-i18n="name">蔡承勳</span><small data-i18n="disclaimer">本站為個人網站，內容僅代表個人，非中華賓士官方網站。</small></footer>
+  <script src="bg.js?v=25"></script>
+  <script src="script.js?v=25"></script>
+  <script src="demo.js?v=25"></script>
+  <script src="deid.js?v=25"></script>
 </body>
 </html>
