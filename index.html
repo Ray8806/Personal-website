@@ -5,18 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>蔡承勳 | 系統工程師 · 中華賓士</title>
   <meta name="description" content="中華賓士資訊部系統工程師，負責全省資訊設備管理、資安監測、設備採購，並運用 AI 打造每日報表匯入監測系統。">
-  <!-- LinkedIn / social preview：部署後請把 URL 換成你的網址，並放一張 1200x627 的 assets/avatar.jpg -->
+  <!-- LinkedIn / social preview：部署後請把 URL 換成你的網址，預覽圖為 assets/og-image.png（1200x627） -->
   <meta property="og:type" content="website">
   <meta property="og:title" content="蔡承勳 | 系統工程師 · 中華賓士">
   <meta property="og:description" content="中華賓士資訊部系統工程師，負責全省資訊設備管理、資安監測、設備採購，並運用 AI 打造每日報表匯入監測系統。">
   <meta property="og:url" content="https://ray8806.github.io/Personal-website/">
-  <meta property="og:image" content="https://ray8806.github.io/Personal-website/assets/avatar.jpg">
+  <meta property="og:image" content="https://ray8806.github.io/Personal-website/assets/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="627">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="stylesheet" href="style.css?v=11">
+  <link rel="stylesheet" href="style.css?v=21">
 </head>
 <body>
   <header class="nav">
-    <a class="logo" href="#top">蔡<span>.</span></a>
+    <a class="logo" href="#top"><img src="assets/avatar.jpg" alt="" width="38" height="38"><b>Ray<i>.</i>tsai</b></a>
     <nav>
       <a href="#about" data-i18n="nav_about">關於我</a>
       <a href="#experience" data-i18n="nav_exp">經歷</a>
@@ -94,7 +96,7 @@
           <source src="assets/demo.mp4" type="video/mp4">
         </video>
         <figcaption>
-          <span class="tag" data-i18n="demo_tag">專題作品展示</span>
+          <span class="tag" data-i18n="demo_tag">2020 · 大學專題成果</span>
           <h3>GrowUp 學習趣</h3>
           <p data-i18n="demo_p">兒童學習 APP：孩子拍下好奇的事物，即可透過 AI 影像辨識得到答案；搭配遊戲式闖關學習，並整合教育部、文化部等政府開放資料，推薦適合的繪本與教材，讓家長掌握孩子的學習狀況。</p>
         </figcaption>
@@ -104,11 +106,11 @@
     <section id="projects">
       <h2 data-i18n="nav_proj">重點專案與職責</h2>
       <div class="grid">
-        <div class="card">
+        <a class="card" href="#demo">
           <span class="tag">AI 專案</span>
           <h3>每日報表匯入監測系統</h3>
           <p data-i18n="p1">以 AI 輔助設計、n8n 自動化執行：定時讀取 log 與資料檔進行交叉比對，並將結果以 Email 通報，取代人工逐筆核對。</p>
-        </div>
+        </a>
         <div class="card">
           <span class="tag">維運</span>
           <h3>全省資訊設備管理</h3>
@@ -119,6 +121,11 @@
           <h3>端點病毒監測</h3>
           <p data-i18n="p3">持續監控電腦是否中毒，及早處置以降低資安風險。</p>
         </div>
+        <a class="card" href="#deid">
+          <span class="tag" data-i18n="p4_tag">個人專案 · 開發中</span>
+          <h3 data-i18n="p4_t">可還原去識別化工具</h3>
+          <p data-i18n="p4">規劃中的個人專案：把文件、表格、圖片中的個資換成代號，需要時再用金鑰還原；所有處理都在本機離線完成。點此試玩簡化版示範。</p>
+        </a>
       </div>
     </section>
 
@@ -156,11 +163,65 @@
           </table>
         </div>
         <div class="mon-actions">
-          <button class="btn primary" id="mon-run" data-i18n="mon_run">重新檢查</button>
-          <button class="btn" id="mon-inject" data-i18n="mon_inject">模擬匯入異常</button>
-          <button class="btn" id="mon-reset" data-i18n="mon_reset">恢復正常</button>
+          <button class="btn on" id="mon-run" aria-pressed="true" data-i18n="mon_run">重新檢查</button>
+          <button class="btn" id="mon-inject" aria-pressed="false" data-i18n="mon_inject">模擬匯入異常</button>
+          <button class="btn" id="mon-reset" aria-pressed="false" data-i18n="mon_reset">恢復正常</button>
         </div>
         <p class="mon-msg" id="mon-msg" role="status"></p>
+      </div>
+    </section>
+
+    <section id="deid">
+      <h2 data-i18n="deid_h">互動示範：可還原去識別化</h2>
+      <p class="demo-note" data-i18n="deid_note">這是我正在規劃的個人專案「可還原去識別化工具」的簡化示範：把個資換成代號，再把代號還原回來。以下全部在你的瀏覽器內執行，不會上傳任何內容，範例資料皆為虛構。真正的工具設計為在本機離線執行，並以加密對照表保存還原資料。</p>
+      <div class="deid" id="deid-app">
+        <div class="deid-bar">
+          <div class="deid-modes" role="group">
+            <button type="button" class="btn on" id="deid-m-token" aria-pressed="true" data-i18n="deid_m_token">代號模式（可還原）</button>
+            <button type="button" class="btn" id="deid-m-mask" aria-pressed="false" data-i18n="deid_m_mask">遮蔽模式</button>
+          </div>
+          <button type="button" class="btn" id="deid-reset" data-i18n="deid_reset">重設範例</button>
+        </div>
+        <div class="deid-custom">
+          <label class="deid-label" for="deid-term" data-i18n="deid_cust">＋ 自訂要去識別化的詞（試試把原文裡的 Aurora 或 星辰科技 加進來；同一對象的不同稱呼用逗號隔開，會共用同一個代號）</label>
+          <div class="deid-addrow">
+            <input type="text" id="deid-term" maxlength="120" autocomplete="off" spellcheck="false">
+            <button type="button" class="btn" id="deid-add" data-i18n="deid_add">加入</button>
+          </div>
+          <p class="deid-warn" id="deid-termmsg" role="status"></p>
+          <ul class="chips" id="deid-chips" aria-label="自訂詞"></ul>
+        </div>
+        <div class="deid-grid">
+          <div class="deid-pane">
+            <label class="deid-label" for="deid-in" data-i18n="deid_in">① 原文（虛構資料，可自行修改；用滑鼠反白選取文字，就能加入去識別化）</label>
+            <textarea id="deid-in" rows="10" spellcheck="false"></textarea>
+            <div class="deid-actions"><button type="button" class="btn" id="deid-sel" disabled data-i18n="deid_sel">＋ 將反白選取的文字去識別化</button></div>
+          </div>
+          <div class="deid-pane">
+            <span class="deid-label" data-i18n="deid_out">② 去識別化結果</span>
+            <div class="deid-box" id="deid-out" aria-live="polite"></div>
+          </div>
+        </div>
+        <p class="deid-sum" id="deid-sum" role="status"></p>
+        <details class="deid-mapbox" id="deid-mapbox">
+          <summary data-i18n="deid_map">查看對照表（示範用；實際工具會加密保存）</summary>
+          <div class="mon-table" id="deid-maptable"></div>
+        </details>
+        <div id="deid-restore">
+          <div class="deid-grid">
+            <div class="deid-pane">
+              <label class="deid-label" for="deid-ai" data-i18n="deid_ai">③ AI 回傳的文字（可編輯，試試改掉代號）</label>
+              <textarea id="deid-ai" rows="10" spellcheck="false"></textarea>
+              <div class="deid-actions"><button type="button" class="btn" id="deid-sim" data-i18n="deid_sim">模擬 AI 改寫代號</button></div>
+            </div>
+            <div class="deid-pane">
+              <span class="deid-label" data-i18n="deid_rest">④ 還原結果（綠色為已還原）</span>
+              <div class="deid-box" id="deid-res" aria-live="polite"></div>
+            </div>
+          </div>
+          <p class="deid-warn" id="deid-warn" role="status"></p>
+        </div>
+        <p class="deid-warn" id="deid-masknote" hidden data-i18n="deid_masknote">遮蔽模式只保留部分格式，原值不會保存，因此無法還原。需要還原時請使用代號模式。</p>
       </div>
     </section>
 
@@ -175,7 +236,8 @@
   </main>
 
   <footer>© <span id="year"></span> 蔡承勳<small data-i18n="disclaimer">本站為個人網站，內容僅代表個人，非中華賓士官方網站。</small></footer>
-  <script src="script.js?v=11"></script>
-  <script src="demo.js?v=11"></script>
+  <script src="script.js?v=21"></script>
+  <script src="demo.js?v=21"></script>
+  <script src="deid.js?v=21"></script>
 </body>
 </html>
