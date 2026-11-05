@@ -25,7 +25,7 @@
   <meta name="twitter:description" content="中華賓士資訊部系統工程師，負責全省資訊設備管理、資安監測、設備採購，並運用 AI 打造每日報表匯入監測系統。">
   <meta name="twitter:image" content="https://ray8806.github.io/Personal-website/assets/og-image.png">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "Person", "name": "蔡承勳", "alternateName": "Ray Tsai", "jobTitle": "系統工程師", "worksFor": {"@type": "Organization", "name": "中華賓士", "legalName": "中華賓士汽車股份有限公司", "alternateName": "Capital Motors, Inc."}, "alumniOf": {"@type": "CollegeOrUniversity", "name": "銘傳大學"}, "url": "https://ray8806.github.io/Personal-website/", "image": "https://ray8806.github.io/Personal-website/assets/avatar.jpg", "sameAs": ["https://www.linkedin.com/in/%E6%89%BF%E5%8B%B3-%E8%94%A1-8613b3425"]}</script>
-  <link rel="stylesheet" href="style.css?v=35">
+  <link rel="stylesheet" href="style.css?v=36">
 </head>
 <body>
   <header class="nav">
@@ -35,6 +35,7 @@
       <a href="#experience" data-i18n="nav_exp">經歷</a>
       <a href="#awards" data-i18n="nav_award">獲獎</a>
       <a href="#projects" data-i18n="nav_proj">作品</a>
+      <a href="#dashboard" data-i18n="nav_dash">動態</a>
       <a href="#demo" data-i18n="nav_demo">示範</a>
       <a href="#contact" data-i18n="nav_contact">聯絡</a>
       <button id="lang" aria-label="Switch language">EN</button>
@@ -137,6 +138,22 @@
           <h3 data-i18n="p4_t">可還原去識別化工具</h3>
           <p data-i18n="p4">規劃中的個人專案：把文件、表格、圖片中的個資換成代號，需要時再用金鑰還原；所有處理都在本機離線完成。點此試玩簡化版示範。</p>
         </a>
+      </div>
+    </section>
+
+    <section id="dashboard">
+      <h2 data-i18n="dash_h">個人儀表板</h2>
+      <p class="demo-note" data-i18n="dash_note">這個區塊的資料由 GitHub Actions 每天自動更新，只使用公開資訊；「近況」則由我手動維護。</p>
+      <div class="dash">
+        <div class="dash-card" id="dash-now"><h3 data-i18n="dash_now">近況</h3><ul id="now-list" class="now-list"></ul><small id="now-upd"></small></div>
+        <div class="dash-card" id="dash-gh" hidden>
+          <h3>GitHub</h3>
+          <div class="dash-nums"><div><b id="gh-repos">–</b><span data-i18n="dash_repos">公開專案</span></div><div><b id="gh-act">–</b><span data-i18n="dash_act">近期活動</span></div></div>
+          <div id="gh-heat" class="heat" role="img"></div>
+          <div id="gh-langs" class="langs"></div>
+          <ul id="gh-recent" class="recent"></ul>
+          <small id="gh-upd"></small>
+        </div>
       </div>
     </section>
 
@@ -247,9 +264,10 @@
   </main>
 
   <footer>© <span id="year"></span> <span data-i18n="name">蔡承勳</span><small data-i18n="disclaimer">本站為個人網站，內容僅代表個人，非中華賓士或台灣賓士官方網站。</small></footer>
-  <script src="bg.js?v=35"></script>
-  <script src="script.js?v=35"></script>
-  <script src="demo.js?v=35"></script>
-  <script src="deid.js?v=35"></script>
+  <script src="bg.js?v=36"></script>
+  <script src="script.js?v=36"></script>
+  <script src="demo.js?v=36"></script>
+  <script src="deid.js?v=36"></script>
+  <script src="dashboard.js?v=36"></script>
 </body>
 </html>
