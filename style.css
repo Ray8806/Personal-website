@@ -168,3 +168,59 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 /* 英文版：單位用大寫小字距，標籤維持單行 */
 :lang(en) .stats b small{text-transform:uppercase;letter-spacing:.14em;font-size:.3em;margin-left:.6em}
 :lang(en) .stats span{letter-spacing:.03em}
+
+/* 個人儀表板 */
+.dash{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px}
+.dash-card{background:color-mix(in srgb,var(--card) 78%,transparent);border:1px solid var(--line);border-radius:20px;padding:28px 26px;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.dash-card[hidden]{display:none}
+.dash-card h3{margin:0 0 14px;font-weight:400;letter-spacing:.08em}
+.dash-card small{display:block;margin-top:16px;color:var(--muted);font-size:.75rem;letter-spacing:.06em}
+.now-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;color:var(--muted)}
+.now-list li{display:flex;gap:12px}
+.dash-nums{display:flex;gap:28px;margin-bottom:18px}
+.dash-nums b{display:block;font-size:2rem;font-weight:300;line-height:1.2}
+.dash-nums span{color:var(--muted);font-size:.8rem;letter-spacing:.06em}
+.heat{display:grid;grid-auto-flow:column;grid-template-rows:repeat(7,1fr);gap:3px;margin-bottom:18px}
+.heat i{aspect-ratio:1;border-radius:3px;background:color-mix(in srgb,var(--fg) 8%,transparent)}
+.heat i[data-l="1"]{background:color-mix(in srgb,var(--accent) 30%,transparent)}
+.heat i[data-l="2"]{background:color-mix(in srgb,var(--accent) 55%,transparent)}
+.heat i[data-l="3"]{background:color-mix(in srgb,var(--accent) 80%,transparent)}
+.heat i[data-l="4"]{background:var(--accent)}
+.langs{display:flex;height:8px;border-radius:99px;overflow:hidden;margin-bottom:8px}
+.langs i{display:block;min-width:4px}
+.lang-legend{display:flex;flex-wrap:wrap;gap:4px 14px;margin:0 0 18px;padding:0;list-style:none;font-size:.78rem;color:var(--muted)}
+.lang-legend span{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px}
+.recent{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;font-size:.9rem}
+.recent a{color:var(--accent)}.recent a:hover{text-decoration:underline}.recent em{font-style:normal;color:var(--muted);margin-left:8px;font-size:.78rem}
+.music-note{margin:0 0 16px;color:var(--muted);font-size:.93rem}
+#music-embed{display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:12px;margin-bottom:16px;background:#000}
+#music-embed[hidden]{display:none}
+#dash-music .btn{display:inline-block;padding:10px 24px;font-size:.85rem}
+
+/* 天氣、股市、預算 */
+:root{--up:#c0392b;--down:#1a8a4a}
+:root[data-theme=dark]{--up:#ff6b5e;--down:#3ddc84}
+.wx-now{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+.wx-now #wx-icon{font-size:2rem;line-height:1}
+.wx-now b{font-size:2.2rem;font-weight:300;line-height:1.2}
+.wx-now #wx-desc{color:var(--muted)}
+.wx-meta{margin:6px 0 14px;color:var(--muted);font-size:.85rem}
+.wx-days{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;font-size:.9rem;font-variant-numeric:tabular-nums}
+.wx-days li{display:grid;grid-template-columns:3.5em 1.6em 1fr auto;align-items:center;gap:8px}
+.wx-days em{font-style:normal;color:var(--muted);font-size:.8rem}
+.stk-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:14px}
+.stk-list li{display:grid;grid-template-columns:minmax(0,1fr) 56px auto;align-items:center;gap:12px}
+.stk-name b{display:block;font-weight:400}
+.stk-name em{font-style:normal;color:var(--muted);font-size:.75rem;letter-spacing:.08em}
+.stk-px{text-align:right;font-variant-numeric:tabular-nums}
+.stk-px b{display:block;font-weight:400}
+.stk-px span{font-size:.78rem}
+.stk-list .up{--c:var(--up)}.stk-list .down{--c:var(--down)}.stk-list .flat{--c:var(--muted)}
+.stk-px span,.stk-list .spark{color:var(--c)}
+.spark{display:block;width:100%;height:26px}
+.spark polyline{stroke:currentColor;stroke-width:1.6;stroke-linejoin:round;stroke-linecap:round}
+.bud-bar{height:8px;border-radius:99px;background:color-mix(in srgb,var(--fg) 10%,transparent);overflow:hidden;margin:6px 0 18px}
+.bud-bar i{display:block;height:100%;background:var(--accent);border-radius:99px}
+.bud-trend{display:flex;align-items:center;gap:12px;color:var(--accent)}
+.bud-trend .spark{width:90px;flex:none}
+.bud-trend em{font-style:normal;color:var(--muted);font-size:.78rem}
