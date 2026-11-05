@@ -1,7 +1,7 @@
 // 個人儀表板：讀取 data/now.json（手動）與 data/github.json（Actions 每日產生）
 (function () {
   var $ = function (id) { return document.getElementById(id); };
-  var now = null, gh = null;
+  var now = null, gh = null, music = null;
   var COLORS = ["#00adef", "#8d9399", "#e0a030", "#5cb85c", "#b06ad8", "#d9534f"];
 
   var en = function () { return document.documentElement.lang === "en"; };
@@ -69,11 +69,32 @@
     $("gh-upd").textContent = (en() ? "GitHub data updated " : "GitHub 資料更新於 ") + fmt(gh.generated_at);
   }
 
-  function render() { renderNow(); renderGh(); }
+  // 只接受 youtube / music.youtube.com 的播放清單連結，並只取出 list ID 組成嵌入網址
+  function listId(url) {
+    try {
+      var u = new URL(url);
+      if (u.protocol !== "https:" || !/^(music|www)\.youtube\.com$/.test(u.hostname)) return null;
+      var id = u.searchParams.get("list");
+      return id && /^[\w-]{10,64}$/.test(id) ? id : null;
+    } catch (e) { return null; }
+  }
+  function renderMusic() {
+    var card = $("dash-music"), id = music && listId(music.playlist_url);
+    if (!id) { card.hidden = true; return; }
+    card.hidden = false;
+    $("music-title").textContent = en() ? music.title.en : music.title.zh;
+    $("music-note").textContent = en() ? music.note.en : music.note.zh;
+    var f = $("music-embed"), src = "https://www.youtube-nocookie.com/embed/videoseries?list=" + id;
+    if (f.getAttribute("src") !== src) f.setAttribute("src", src);
+    f.hidden = false;
+    $("music-link").href = "https://music.youtube.com/playlist?list=" + id;
+  }
+
+  function render() { renderNow(); renderGh(); renderMusic(); }
 
   var prev = window.onLangChange;
   window.onLangChange = function () { if (prev) prev(); render(); };
 
   function load(path) { return fetch(path, { cache: "no-cache" }).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; }); }
-  Promise.all([load("data/now.json"), load("data/github.json")]).then(function (res) { now = res[0]; gh = res[1]; render(); });
+  Promise.all([load("data/now.json"), load("data/github.json"), load("data/music.json")]).then(function (res) { now = res[0]; gh = res[1]; music = res[2]; render(); });
 })();

@@ -6,6 +6,7 @@ const dict = {
     tag1:"AI project", c1_t:"Daily report-import monitoring", tag2:"Operations", c2_t:"IT equipment management", tag3:"Security", c3_t:"Endpoint virus monitoring", mail_btn:"Email me",
     nav_dash:"Live", dash_h:"Personal dashboard", dash_now:"Now", dash_repos:"public repos", dash_act:"recent activity",
     dash_note:"Data in this section is refreshed daily by GitHub Actions and uses public information only; the \"Now\" card is maintained by hand.",
+    music_open:"Open in YouTube Music",
     nav_about:"About", nav_exp:"Experience", nav_award:"Awards", nav_demo:"Demo", nav_proj:"Projects & Scope", nav_contact:"Contact",
     hero_hi:"Hi, I'm", hero_role:"Systems Engineer · IT Dept., Capital Motors, Inc.",
     hero_lead:"I keep nationwide IT infrastructure stable and secure, and use AI to automate repetitive monitoring so problems are caught before they spread.",

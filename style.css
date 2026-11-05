@@ -192,3 +192,7 @@ body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
 .lang-legend span{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px}
 .recent{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px;font-size:.9rem}
 .recent a{color:var(--accent)}.recent a:hover{text-decoration:underline}.recent em{font-style:normal;color:var(--muted);margin-left:8px;font-size:.78rem}
+.music-note{margin:0 0 16px;color:var(--muted);font-size:.93rem}
+#music-embed{display:block;width:100%;aspect-ratio:16/9;border:0;border-radius:12px;margin-bottom:16px;background:#000}
+#music-embed[hidden]{display:none}
+#dash-music .btn{display:inline-block;padding:10px 24px;font-size:.85rem}
